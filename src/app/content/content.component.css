@@ -1,0 +1,47 @@
+/* Styles généraux pour le corps de la page */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden; 
+    position: fixed;
+  }
+  
+    
+  
+  
+
+  .logo {
+    position: absolute;
+    left: 3%;
+    top: 4%;
+    width: 9%; 
+    height: auto; 
+    z-index: 120;
+  }
+
+  /* Media query pour les écrans de taille inférieure à 768px (taille de tablette) */
+  @media (max-width: 768px) {
+    .logo {
+      left: 50%; 
+      transform: translateX(-50%); 
+      top: 4%; 
+      width: 20%; 
+      height: auto;
+    }
+
+  }
+
+  app-left-bar {
+    position: fixed;
+    z-index: 100; 
+}
+app-right-bar {
+  position: fixed;
+  z-index: 100; 
+}
+
+
+app-background {
+    z-index: 1;
+}

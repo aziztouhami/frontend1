@@ -1,0 +1,65 @@
+.blur-background {
+  width: 100%;
+  height: 100%;
+  background-color: #FAF7F7;
+  position: fixed;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.circle {
+  width: 70%; 
+  height: 100%;
+  background-color: #00A3EF; 
+  border-radius: 50%; 
+  position: absolute;
+  top: 10%; 
+  filter: blur(50px); 
+  opacity: 50%; 
+}
+.circle4 {
+  width: 60%; 
+  height: 90%;
+  background-color: #14D0D0; 
+  border-radius: 50%; 
+  position: absolute;
+  left: 10%;
+  filter: blur(50px); 
+  opacity: 50%; 
+}
+
+
+
+.circle2 {
+  width: 70%;
+  height: 90%; 
+  background-color: #00A3EF; 
+  border-radius: 50%; 
+  position: absolute;
+  left: 60%;
+  top: 30%;
+  filter: blur(50px);
+  opacity: 50%; 
+}
+.circle3 {
+  width: 90%;
+  height: 90%; 
+  background-color: #14D0D0; 
+  border-radius: 50%; 
+  position: absolute;
+  left: 30%;
+  filter: blur(50px);
+
+}
+
+.footer-text {
+  width: 100%; 
+  position: fixed;
+  bottom: 2%;
+  left: 0;
+  text-align: center; 
+  color: #ffffff; 
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+  font-size: 2vh;
+
+}

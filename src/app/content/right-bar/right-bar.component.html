@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+<!-- Bouton du menu -->
+<button class="menu-btn" (click)="toggleRightBar()">  <i class="bi" [ngClass]="{'bi-chevron-left': rightBarVisible, 'bi-chevron-right': !rightBarVisible}"></i>
+</button>
+<!-- Conteneur de la barre latérale droite -->
+<div [class]="rightBarVisible ?  'rightbar is-closed': 'rightbar is-open'">
+  <i class="bi bi-person-circle"></i>
+    <span class="UserName"> {{UserName}}</span>
+    <span class="Adresse"> {{Adresse}}</span> 
+    <button class="logout-btn" (click)='logout()'>Logout</button>
+
+  </div>
+
+  
+ 
+

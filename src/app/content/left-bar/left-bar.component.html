@@ -1,0 +1,22 @@
+<button class="menu-btn" (click)="toggleLeftBar()">☰</button>
+<div class="leftbar" [class.active]="leftBarVisible" > 
+  <ng-container *ngIf="test; else elsecontent">
+    <div class="horizontal-container1">
+      <img src="../../assets/Subscriptions.png" alt="Subscription">
+      <!-- Lien avec routeur -->
+      <a routerLink="/content/abonnements">Subscriptions</a>
+    </div>
+    <div  class="horizontal-container">
+    <img src="../../assets/Padlock.png" alt="Diagram">
+    <a routerLink="/content/abonnements">Graphic</a>
+    </div>
+    </ng-container>
+  
+   <!-- Template alternatif en cas de condition non remplie -->
+    <ng-template #elsecontent>
+      <div class="horizontal-container">
+        <img src="../assets/Subscriptions.png" alt="Subscription">
+        <a routerLink="/content/abonnements">Subscriptions</a>
+      </div>
+    </ng-template>
+  </div>

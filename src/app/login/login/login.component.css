@@ -1,0 +1,286 @@
+/* Styles généraux pour le corps de la page */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow: hidden; 
+  max-width: 100%;
+  max-height: 100%;
+
+}
+/* Styles pour l'arrière-plan flou */
+.blurbackground {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  background-color: #FAF7F7;
+  position:fixed;
+}
+/* Styles pour les cercles décoratifs */
+.circle {
+  width: 20%; 
+  height: 60%; 
+  background-color: #00A3EF; 
+  border-radius: 50%; 
+  position: absolute;
+  top: 15%; 
+  left: 40%; 
+  transform: translate(-50%, -50%);
+  filter: blur(50px); 
+  opacity: 0.9; 
+}
+
+.circle3 {
+  width: 100%; 
+  height: 100%;
+  background-color: #14D0D0; 
+  border-radius: 50%; 
+  position: absolute;
+  bottom: 45%;
+  right: 12%;
+  transform: translate(50%, 50%); 
+  filter: blur(50px);
+  opacity: 0.9;
+}
+
+
+.circle2 {
+  width: 90%;
+  height: 90%; 
+  background-color: #00A3EF; 
+  border-radius: 50%; 
+  position: absolute;
+  bottom: 25%; 
+  right: 14%;
+  transform: translate(50%, 50%); 
+  filter: blur(50px);
+  opacity: 0.9; 
+}
+
+/* Styles pour le logo INSOMEA */
+.logo {
+  position: absolute;
+  left: 3%;
+  top: 4%;
+  width: 9%; 
+  height: auto; 
+  z-index: 50;
+
+}
+
+.rectangle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 45%; 
+  z-index: 10; 
+  background-color: #ffffff;
+  display: flex; 
+  align-items:center; 
+  justify-content: center;
+}
+ 
+.lock {
+  display: flex; 
+  align-items:center; 
+  justify-content: center;
+  max-width: 80%; 
+  max-height: 80%; 
+  margin-left: 10%;
+  margin-right: 10%;
+  z-index: 50;
+  
+
+}
+
+
+.title {
+  color: #81D3F9;
+  text-align: center; 
+  margin-top: 5%; 
+  margin-bottom: 10%;
+  font-size: 3vw; 
+  font-weight: bold; 
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  transition: color 0.5s ease; 
+  font-family: 'Roboto', sans-serif;
+}
+
+.title:hover {
+  animation: bounce 2s ease-in-out infinite; 
+  color: #2d86af; 
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  font-family: 'Roboto', sans-serif;
+}
+.first-line {
+  display: block; 
+}
+
+.second-line {
+  display: block;
+}
+
+.login-box {
+  position: absolute;
+  width: 25%; 
+  height: 60%;
+  margin: 0 auto;
+  top: 50%;
+  left: 73%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.2); 
+  border: 3px solid rgb(255, 255, 255);
+  box-sizing: border-box; 
+  padding: 20px; 
+  border-radius: 20px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+.login-box h1 {
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+  font-size: 4vw;
+  font-weight: bold;
+  margin-top: 10%;
+  margin-bottom: 35%;
+}
+
+.login-button {
+  
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, 1);
+  color: white;
+  padding: 5% 10%;
+  font-size: 100%;
+  cursor: pointer;
+  border-radius: 15px;
+  box-sizing: border-box;
+  overflow: hidden;
+  margin-left: 20%;
+  margin-right: 20%;
+  max-width: 100%; 
+  display: block;
+  width: 65%; /* Ajusté pour contrôler la largeur */
+  margin: 5% auto; /* Modifié pour centrer automatiquement */
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  
+
+}
+
+.login-button img {
+  margin-right: 10px; 
+}
+.login-button:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.error-message {
+  color: red; 
+  text-align: center;
+  font-size: 2.5vh; 
+  margin-top: 10%; 
+  width: 100%; 
+  padding:  5%; 
+  box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden; 
+}
+
+
+/* Media query pour les écrans de taille inférieure à 768px (taille de tablette) */
+@media only screen and (max-width: 768px) {
+.login-box {
+  position: absolute;
+  width: 35%; 
+  height: 60%;
+  margin: 0 auto;
+  top: 50%;
+  left: 73%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.2); 
+  border: 3px solid rgb(255, 255, 255);
+  box-sizing: border-box; 
+  padding: 10px; 
+  border-radius: 20px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+.login-button {
+  
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, 1);
+  color: white;
+  padding: 5% 10%;
+  font-size: 100%;
+  cursor: pointer;
+  border-radius: 15px;
+  box-sizing: border-box;
+  overflow: hidden;
+  margin-left: 20%;
+  margin-right: 20%;
+  display: block;
+  width: 70%; /* Ajusté pour contrôler la largeur */
+  margin: 50% auto; /* Modifié pour centrer automatiquement */
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  
+}
+}
+/* Media query pour les écrans de taille inférieure à 768px (taille de tablette) */
+@media only screen and (max-width: 767px) {
+.rectangle {
+    width: 100%;
+    height: 45%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: auto;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+.lock {
+  width: 40%; /* Réduit la largeur pour que l'icône soit plus petite */
+  height: auto; /* Permet à la hauteur de s'ajuster proportionnellement */
+  max-width: 40%; /* Ajustez la largeur maximale */
+  max-height: none; /* Enlève la hauteur maximale si vous l'aviez définie */
+  margin: 0 auto; /* Centre l'élément dans son conteneur */
+}
+
+.circle2 {
+right: 50%; /* Nouvelle position horizontale pour l'écran plus petit */
+
+}
+
+.circle3 {
+right: 80%; /* Nouvelle position horizontale pour l'écran plus petit */
+}
+
+.login-box {
+width: 60%; /* Largeur du boîtier de connexion */
+height: auto; /* Hauteur ajustée au contenu */
+position: fixed; /* Positionnement fixe par rapport à la fenêtre du navigateur */
+bottom: 0; /* Positionné au bas de l'écran */
+left: 50%; /* Centré horizontalement */
+transform: translateX(-50%); /* Ajustement pour le centrage horizontal */
+border-radius: 20px 20px 20px 20px; /* Arrondi en haut du boîtier, si souhaité */
+padding: 20px; /* Espace intérieur */
+margin-bottom: 10%;
+}
+.login-button {
+width: 85%; /* Réduit pour correspondre à la largeur ajustée du .login-box */
+margin: 20px auto; /* Augmente l'espace au-dessus et centre le bouton */
+padding: 5px 0; /* Ajustement du padding pour un meilleur look */
+font-size: 4vw; /* Ajustement de la taille de la police pour les petits écrans */
+justify-content: center; /* Assure que le contenu est centré dans le bouton */
+}
+
+
+
+
+
+}

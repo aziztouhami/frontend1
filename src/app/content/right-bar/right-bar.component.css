@@ -1,0 +1,203 @@
+/* Styles pour la barre latérale droite */
+.rightbar {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-left: 3px solid rgba(255, 255, 255, 1);
+  color: #ffffff;
+  width: 15%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 2%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-height: 100%;
+  font-family: 'Roboto', sans-serif;
+
+}
+/* Styles pour le bouton du menu */
+.menu-btn {
+  display: none; 
+  position: fixed; 
+  top: 5%; 
+  right: 5%;
+  transform: translateY(-50%); 
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  color: white;
+  font-size: 0.5rem;
+  z-index: 105; 
+}
+
+/* Styles pour le bouton du menu lorsque la barre latérale est fermée */
+.rightbar.is-closed + .menu-btn {
+  right: 10%; 
+  padding-right: 30%;
+}
+/* Styles pour le bouton du menu lorsque la barre latérale est ouverte */
+.rightbar.is-open + .menu-btn {
+  right: 50%; 
+}
+.rightbar.is-open {
+  display: flex; 
+}
+
+.rightbar i {
+  padding-top: 13%; 
+  font-size: 6vh;
+
+}
+
+.UserName{
+  padding-top: 8%;
+  margin-top: 10%;
+  font-size: 3vh;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+
+}
+
+.Adresse{
+  padding-top: 12%; 
+  margin-top: 10%;
+  font-size: 2.5vh;
+  width: 100%;
+  text-align: center;
+
+
+}
+
+.TenantName{
+  padding-top: 16%; 
+  margin-top: 10%;
+  font-size: 2.5vh;
+  width: 100%;
+  text-align: center;
+}
+
+.logout-btn {
+  width: auto;
+  max-width: 100%; 
+  margin: 0 auto; 
+  padding: 10px 20px;
+  font-size: 2vh; 
+  background-color: #ffffff;
+  color: #1B6182; 
+  border: 2px solid #ffffff; 
+  border-radius: 20px;
+  cursor: pointer;
+  width: 12%;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s;
+  font-family: 'Roboto', sans-serif;
+  position: fixed;
+  bottom: 5%;
+  font-weight: bold;
+  overflow: hidden; 
+  white-space: nowrap; 
+  text-overflow: ellipsis; 
+  width: auto;
+  max-width: 90%; 
+  z-index: 10; 
+  
+}
+.logout-btn:hover {
+color: #ffffff; 
+  background-color: transparent; 
+
+}
+
+.rightbar span, .rightbar i {
+word-wrap: break-word;
+white-space: normal; 
+overflow-wrap: break-word; 
+}
+
+/* Media queries pour les écrans de différentes tailles */
+@media (max-width: 769px) {
+.rightbar {
+    width: 40%; 
+   
+}
+.menu-btn {
+  display: block; 
+}
+
+.rightbar {
+  width: 40%; 
+  display: none; 
+  
+}
+
+.rightbar.active {
+  display: flex; 
+}
+}
+
+@media (max-width: 768px) {
+.rightbar {
+    width: 35%;
+    display: none; 
+    background-color: #14D0D0;
+}
+.rightbar.active {
+    display: flex; 
+}
+.menu-btn {
+  background-color: transparent;
+   border: none;
+   cursor: pointer;
+   height: 40px;
+   width: 40px; 
+   color: white;
+   font-size: 2rem
+   
+ }
+
+.rightbar {
+  width: 40%; 
+  display: none; 
+}
+
+.rightbar.active {
+  display: flex; 
+}
+}
+@media (max-width: 683px) {
+.rightbar {
+    width: 35%; 
+    display: none; 
+    background-color: #14d0d0;
+}
+.rightbar.active {
+    display: flex;
+}
+.menu-btn {
+  background-color: transparent;
+   border: none;
+   cursor: pointer;
+   height: 40px;
+   width: 40px; 
+   color: white;
+   font-size: 2rem
+   
+ }
+
+.rightbar {
+  width: 40%;
+  display: none; 
+ 
+}
+
+.rightbar.active {
+  display: flex; 
+}
+}
+
+
+

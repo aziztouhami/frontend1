@@ -1,0 +1,31 @@
+/* Styles pour le conteneur principal */
+div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; 
+  }
+  /* Styles pour l'animation de chargement */
+  .loader {
+    border: 8px solid #f3f3f3; 
+    border-top: 8px solid #1B6182; 
+    border-radius: 50%;
+    width: 60px; 
+    height: 60px; 
+    animation: spin 2s linear infinite;
+  }
+  /* Définition de l'animation de rotation */
+  @keyframes spin {
+    0% { transform: rotate(0deg); } /* Début de l'animation: rotation à 0 degrés */
+    100% { transform: rotate(360deg); } /* Fin de l'animation: rotation à 360 degrés (un tour complet) */
+  }
+  /* Styles pour le titre "Processing" */
+  h1 {
+    margin-top: 10px; 
+    color: #1B6182; 
+    font-size: 18px; 
+  }
+  
