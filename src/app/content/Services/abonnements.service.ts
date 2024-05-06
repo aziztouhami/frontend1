@@ -11,13 +11,23 @@ export class AbonnementsService {
 
   constructor(private http:HttpClient) { }
 
+  private getHeaders(): HttpHeaders {   let token: string | null = null; 
+
+
+    if (typeof window !== 'undefined') { token = sessionStorage.getItem('accessToken');
+      console.log(token)
+    }
+  return new HttpHeaders({
+     'Authorization': ` ${token}`
+   });}
+
  // Méthode pour récupérer les abonnements
   getAbo(){
-    return this.http.get<{url: string}>(`${environment.backendURL}/Abonnements`, { withCredentials: true });
+    return this.http.get<{url: string}>(`${environment.backendURL}/Abonnements`, { headers:this.getHeaders()});
   }
   // Méthode pour récupérer les détails d'un abonnement spécifique
   getSubscription(sub : string){
-    return this.http.get<{url: string}>(`${environment.backendURL}/Vizualisation/${sub}`, { withCredentials: true })
+    return this.http.get<{url: string}>(`${environment.backendURL}/Vizualisation/${sub}`, { headers:this.getHeaders()})
   }
 
   getTest():Observable<{ test: string | null }>{

@@ -1,39 +1,67 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { environment } from '../../../environments/environment';
+import { AuthentificationService } from '../Services/authentification.service';
+import { MsalBroadcastService, MsalService } from '@azure/msal-angular';
+import { IPublicClientApplication, PublicClientApplication } from '@azure/msal-browser';
+import { Router } from  '@angular/router';;
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
+  
 
 })
 export class LoginComponent implements OnInit {
   ErrorMessage=""; // Variable pour stocker les messages d'erreur
+  private msalInstance: IPublicClientApplication;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private router: Router,private route: ActivatedRoute,private msalService:MsalService) {
+    this.msalInstance = this.msalService.instance;
+  }
 
-  ngOnInit(): void {
-     // Souscrit aux modifications des paramètres de l'URL
-    this.route.queryParams.subscribe((params) => {
-        // Affiche le message d'erreur reçu dans la console
-      console.log(this.ErrorMessage)
-      // Vérifie s'il y a une erreur dans les paramètres de l'URL
+  async ngOnInit() {
+    this.route.queryParams.subscribe(params => {
       if (params['error']) {
-        // Si une erreur est présente, la stocke dans ErrorMessage
         this.ErrorMessage = params['error'];
-        console.log(this.ErrorMessage)
       }
-
     });
+
+    try {
+      // Appel d'initialize si disponible et nécessaire
+      if (this.msalInstance.initialize) {
+        await this.msalInstance.initialize();
+      }
+      const result = await this.msalInstance.handleRedirectPromise();
+      if (result) {
+        if (result.accessToken) {
+      
+          sessionStorage.setItem('accessToken', result.accessToken);
+        }
+        if (result.account && result.account.username) {
+          sessionStorage.setItem('email', result.account.username);
+        }
+        if (result.account && result.account.name) {
+          sessionStorage.setItem('nom', result.account.name);
+        }  
+      this.router.navigateByUrl(environment.redirectURL);}
+      
+  
+         else {
+        console.log('No result from handleRedirectPromise');
+      }
+    } catch (error) {
+      console.error('Error in redirect handling', error);
+      this.ErrorMessage = "Une erreur est survenue lors du traitement de la redirection.";
+    }
   }
+
+
   // Méthode appelée lors du clic sur le bouton de connexion
-  login():void{
-    // Redirige vers l'URL de connexion
-  window.location.href = `${environment.backendURL}/signin`;
-
-
-  }
+  signIn(): void {
+    this.msalInstance.loginRedirect({ scopes: ['https://management.azure.com/.default'] });
+    }
 
 
 /*constructor(private http: HttpClient, ) {}

@@ -1,48 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
-
+import { AuthentificationService } from '../Services/authentification.service';
+import { MsalBroadcastService, MsalService } from '@azure/msal-angular';
+import { AuthenticationResult, EventMessage, EventType } from '@azure/msal-browser';
 @Component({
   selector: 'app-process-token',
   templateUrl: './token.component.html',
   styleUrls: ['./token.component.css'],
 })
 export class TokenComponent implements OnInit {
-  constructor(private router: Router) {}
+  token: string | null = null;
+  
+
+  constructor(private router: Router,private activatedRoute: ActivatedRoute,private msalService: MsalService,private msalBroadcastService: MsalBroadcastService) {}
 
 
   ngOnInit() {
-    // Vérifie si le code s'exécute côté client (navigateur)
-    if (typeof window !== 'undefined') {
-      // Obtient la partie de hachage de l'URL
-      const hash = window.location.hash.substr(1);
-      // Analyse les paramètres de la partie de hachage pour extraire les données
-      const params = hash.split('&').reduce<Record<string, string>>((acc, current) => {
-        const [key, value] = current.split('=');
-        acc[key] = decodeURIComponent(value); 
-        return acc;
-      }, {});
-      // Récupère les données du token, de l'utilisateur et d'autres informations s'ils existent
-    
-      const email = params['email'];
-      const nom = params['nom'];
-      // Stocke le token dans le sessionStorage s'il existe
-      
-      // Stocke l'ID de l'utilisateur dans le sessionStorage s'il existe
-      if (email) {
-        sessionStorage.setItem('email', email);
-      }
-       // Stocke d'autres informations dans le sessionStorage si elles existent
-      if (nom) {
-        sessionStorage.setItem('nom', nom);
-      }
-       // Redirige l'utilisateur vers '/content' après 2 secondes
-      setTimeout(() => {
-       // window.location.hash = '';
-       // window.location.href = '/content';
-        // Redirection vers '/content'
-       this.router.navigateByUrl(environment.redirectURL);
-      }, 2000);
-    }
+    /*this.activatedRoute.fragment.subscribe(fragment => {
+      const params = new URLSearchParams(fragment ? fragment : '');
+      this.code = params.get('code');
+      console.log(this.code)
+    });*/
+   
+    this.msalService.handleRedirectObservable().subscribe({
+      next: (result: AuthenticationResult) => {      },
+      error: (error) => console.error('Error processing redirect:', error)
+    });
+
+  
   }
 }

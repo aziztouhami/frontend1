@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
+import { MsalService } from '@azure/msal-angular';
 
 @Component({
   selector: 'app-right-bar',
@@ -18,7 +19,7 @@ export class RightBarComponent {
     this.rightBarVisible = !this.rightBarVisible;
 }
 
-  constructor(private http: HttpClient,private router: Router) {} // Constructeur du composant
+  constructor(private http: HttpClient,private router: Router,private msalService: MsalService) {} // Constructeur du composant
 
   ngOnInit(): void {
     // Initialisation des propriétés UserName et Adresse à partir des données de session
@@ -27,15 +28,9 @@ export class RightBarComponent {
       this.Adresse = sessionStorage.getItem('email'); // Récupère l'adresse email de l'utilisateur depuis la session
     }
   }
-  logout() {
-    this.http.delete(`${environment.backendURL}/logout`, { withCredentials: true, responseType: 'text' }).subscribe({
-        next: (response) => {
-            console.log('Réponse de déconnexion:', response);
-            this.router.navigate(['/login']);
-        },
-        error: (error) => {
-            console.error('Erreur lors de la déconnexion:', error);
-        }
-    });
-}
+  logout(): void {   sessionStorage.clear(); 
+  
+    this.msalService.logout({
+      postLogoutRedirectUri: '/login'
+    });  }
 }

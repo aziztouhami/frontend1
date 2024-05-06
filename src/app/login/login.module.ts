@@ -4,6 +4,8 @@ import { LoginComponent } from './login/login.component';
 import { RouterModule,Routes } from '@angular/router';
 import {provideClientHydration} from '@angular/platform-browser';
 import { TokenComponent } from './token/token.component';
+import { ProcessingComponent } from './processing/processing.component';
+
 
 
 // Définition des routes spécifiques pour le module de connexion 
@@ -12,28 +14,32 @@ const routes: Routes = [
   { path: '', component: LoginComponent } ,
   // Route pour afficher le composant TokenComponent 
   { path: 'token', component: TokenComponent },
-    // Redirection vers la page de connexion si l'URL ne correspond à aucune route définie 
-  //{ path: '**', redirectTo: '/login' },
-
-
+  { path: 'processing', component: ProcessingComponent}
 ];
+
+
+
+
+
 @NgModule({
   declarations: [
     // Déclaration des composants du module de connexion
     LoginComponent,
-    TokenComponent
+    TokenComponent,
+    ProcessingComponent
   ],
 
 
   imports: [
     // Import des modules requis pour ce module 
     CommonModule,
-  RouterModule.forChild(routes) , // Configuration des routes spécifiques au module de connexion
+  RouterModule.forChild(routes) ,// Configuration des routes spécifiques au module de connexion
 
   ],
    // Fourniture des services spécifiques à ce module
-  providers: [provideClientHydration()], // Fournit un service pour l'hydratation côté client 
+  providers: [provideClientHydration(),// Fournit un service pour l'hydratation côté client 
   // transformation d'une page web statique en une application web interactive
+  ], 
   
 })
 
