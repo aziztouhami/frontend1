@@ -1,0 +1,24 @@
+<div class="container">
+
+  <h1> Viewing history </h1>
+  
+    <div *ngIf="dates.length > 0; else noData" >
+      <ol class="rectangle">
+        <div class="dropdown-content">
+          <label ><li *ngFor="let date of dates" class="contenu"> {{ date | date:'medium' }}
+             <button  class="voir-btn"  (click)="navigateToVisualisation( date.toString())">
+          </button></li></label>
+    </div>
+    </ol>
+    </div>
+    <ng-template #noData class="error-message">Aucune donnée trouvée pour cet abonnement.</ng-template>
+  </div>
+
+   
+<!--
+    <ol>
+       <div >
+        <label> <li>date et temps <button >Voir</button></li></label>
+        
+       
+    </ol>-->

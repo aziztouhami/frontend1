@@ -4,7 +4,6 @@ import { LoginComponent } from './login/login.component';
 import { RouterModule,Routes } from '@angular/router';
 import {provideClientHydration} from '@angular/platform-browser';
 import { TokenComponent } from './token/token.component';
-import { ProcessingComponent } from './processing/processing.component';
 
 
 
@@ -13,9 +12,7 @@ const routes: Routes = [
    // Route par défaut, affiche le composant LoginComponent
   { path: '', component: LoginComponent } ,
   // Route pour afficher le composant TokenComponent 
-  { path: 'token', component: TokenComponent },
-  { path: 'processing', component: ProcessingComponent}
-];
+  { path: 'token', component: TokenComponent }];
 
 
 
@@ -26,7 +23,6 @@ const routes: Routes = [
     // Déclaration des composants du module de connexion
     LoginComponent,
     TokenComponent,
-    ProcessingComponent
   ],
 
 

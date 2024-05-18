@@ -38,7 +38,8 @@
             <img src="../assets/Subscriptions.png" alt="Subscription">
           <div class="content">
             <p class="liste1"> {{ i.nom }}</p>
-            <button (click)= "navigateToGraphique(i.id,i.nom)" >Show</button>
+            <button (click)="navigateToGraphique(i.id,i.nom)" class="show-button" >Show</button>
+            <button *ngIf="i.historique" (click)="navigateToHistorique(i.id,i.nom)"class="historique-button">History</button>
           </div>
       </div>
       <div class="RectangleMsg">
@@ -52,23 +53,36 @@
     <div class="centered-rectangle">
     <h1 class="titre2">Subscriptions</h1>
 
+   
+
     <div *ngIf="p!=0" >
       <button class="left" (click)="pagegauche()">
         <i class="bi bi-arrow-left"></i>      </button>
   </div>
- 
-
-      <div *ngFor="let i of collection ; let idx = index" class="rectangle2" [class.rectangle2-1]="idx === 0" [class.rectangle2-2]="idx === 1">
+      <!-- <div *ngFor="let i of collection ; let idx = index" class="rectangle2" [class.rectangle2-1]="idx === 0" [class.rectangle2-2]="idx === 1">
         <img src="../assets/Subscriptions.png" alt="Subscription">
-        <div class="content">
+      <div class="content">
        <p class="liste2"> {{ i.nom }} </p> 
        <button *ngIf="idx === 0" (click)="navigateToGraphique(i.id,i.nom)" >Show</button>
            <button *ngIf="idx === 1" (click)="navigateToGraphique(i.id,i.nom)">Show</button>
-          </div>
+          </div> -->
+
+          <div *ngFor="let i of collection; let idx = index" class="rectangle2" [class.rectangle2-1]="idx === 0" [class.rectangle2-2]="idx === 1">
+            <img src="../assets/Subscriptions.png" alt="Subscription">
+            <div class="content">
+                <p class="liste2">{{ i.nom }}</p> 
+                <button *ngIf="idx === 0" (click)="navigateToGraphique(i.id,i.nom)" class="show-button">Show</button>
+                <button *ngIf="idx === 1" (click)="navigateToGraphique(i.id,i.nom)" class="show-button">Show</button>
+                <button *ngIf="i.historique" (click)="navigateToHistorique(i.id,i.nom)"class="historique-button">History</button>
+                
+            </div>
         </div>
-        <div class="RectangleMsg">
- Select your subscription to access the diagram !          </div>
+        
+        <div class="RectangleMsg">  
+          Select your subscription to access the diagram !          </div>
       </div>
+
+     
   </div>
   
 
@@ -96,13 +110,18 @@
         <img src="../assets/Subscriptions.png" alt="Subscription">
         <div class="content">
            <p class="liste3"> {{ i.id }} - {{ i.nom }} </p>
-           <button *ngIf="idx === 0"  (click)="navigateToGraphique(i.id,i.nom)" >Show</button>
-           <button *ngIf="idx === 1"  (click)="navigateToGraphique(i.id,i.nom)">Show</button>
-           <button *ngIf="idx === 2"  (click)="navigateToGraphique(i.id,i.nom)">Show</button>
+           <button *ngIf="idx === 0"  (click)="navigateToGraphique(i.id,i.nom)"class="show-button" >Show</button>
+           <button *ngIf="idx === 1"  (click)="navigateToGraphique(i.id,i.nom)"class="show-button">Show</button>
+           <button *ngIf="idx === 2"  (click)="navigateToGraphique(i.id,i.nom)"class="show-button">Show</button>
+           <button *ngIf="i.historique" (click)="navigateToHistorique(i.id,i.nom)"class="historique-button">History</button>
+
           </div>
         </div>
         <div class="RectangleMsg">
+          
            Select your subscription to access the diagram !
         </div>
       </div>
   </div>
+
+ 

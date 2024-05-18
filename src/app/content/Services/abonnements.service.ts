@@ -15,7 +15,7 @@ export class AbonnementsService {
 
 
     if (typeof window !== 'undefined') { token = sessionStorage.getItem('accessToken');
-      console.log(token)
+     
     }
   return new HttpHeaders({
      'Authorization': ` ${token}`
@@ -35,4 +35,18 @@ export class AbonnementsService {
     return this.http.get<{ test: string | null }>(`${environment.backendURL}/test`)
   }
   
+  getEtat(subscriptionId: string): Observable<{ hasState: boolean }> {
+    return this.http.get<{ hasState: boolean }>(`${environment.backendURL}/getEtat/${subscriptionId}`);
+  }
+ 
+
+  getHistorique(subscriptionId: string): Observable<Date[]> {
+    return this.http.get<Date[]>(`${environment.backendURL}/getHistorique/${subscriptionId}`);
+  }
+
+
+  getVisualisationChoisie(subscriptionId: string, date: string){
+    const queryParams = { params: { date: date }};
+    return this.http.get<{url: string}>(`${environment.backendURL}/VisualisationChoisi/${subscriptionId}`, queryParams);
+  }
 }

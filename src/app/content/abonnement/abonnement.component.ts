@@ -10,6 +10,7 @@ import { Title } from '@angular/platform-browser';
 interface Subscription {
   id: string;
   nom: string;
+  historique :boolean,
 }
 
 
@@ -33,11 +34,7 @@ export class AbonnementComponent implements OnInit {
   ngOnInit(): void {
     // Appel de la méthode pour récupérer les abonnements lors de l'initialisation du composant
     this.title.setTitle('Your subscriptions | Azure Resource Visualizer');
-    this.getAbonnements();
-
-    
-
-  }
+this.getAbonnements()  }
   // Méthode pour récupérer les abonnements depuis le service
   getAbonnements() {
     this.isLoading = true;
@@ -47,12 +44,17 @@ export class AbonnementComponent implements OnInit {
           // Mappe les données reçues en instances de l'interface Subscription
           this.Subscriptions = data.map(item => ({
             id: item.id,
-            nom: item.name 
+            nom: item.name,
+            historique:false
         }))
         
         ;}
+        this.Subscriptions.forEach(subscription => {
+          this.traiterEtat(subscription)     
+        console.log()   });
         // Initialise la collection pour la pagination
         this.initialiserCollection();
+      
         this.isLoading = false;
       },
       error: (err) => {
@@ -87,14 +89,27 @@ export class AbonnementComponent implements OnInit {
 
 }
 
+traiterEtat(subscription: Subscription) {
+  this.service.getEtat(subscription.id).subscribe({
+    next: (response) => {
+      if (response.hasState) {
+        subscription.historique=true
+      } 
+    },
+    error: (err) => {
+      console.error('Erreur lors de la récupération de l\'état:', err);
+    }
+  });
+}
+
 
  // Méthode pour naviguer vers la page de graphique d'un abonnement
 navigateToGraphique(id: string, nom: string) {
-  this.router.navigate([`/content/abonnement/${nom}`], { queryParams: { id: id } });
+  this.router.navigate([`/content/abonnement`], { queryParams: { nom: nom,id: id } });
 
 
   //window.location.href = `/abonnement/${id}`;
 
 }
-
+navigateToHistorique(id: string, nom: string){ this.router.navigate([`/content/Historique`], { queryParams: { nom: nom,id: id } });}
 }

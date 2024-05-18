@@ -10,6 +10,8 @@ import { ContentModule } from './content/content.module';
 import { environment } from '../environments/environment';
 import { MsalModule,MsalInterceptor, MSAL_INSTANCE, MsalService, MSAL_INTERCEPTOR_CONFIG, MsalInterceptorConfiguration } from '@azure/msal-angular';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ListeHistoriqueComponent } from './content/liste-historique/liste-historique.component';
+import { VisualisationComponent } from './content/visualisation/visualisation.component';
 
 export function MSALInstanceFactory(): PublicClientApplication {
   return new PublicClientApplication({
@@ -34,6 +36,8 @@ export function MSALInterceptorConfigFactory(): MsalInterceptorConfiguration {
   // Déclarations des composants
   declarations: [
     AppComponent,
+    ListeHistoriqueComponent,
+    VisualisationComponent,
     
   ],
   imports: [

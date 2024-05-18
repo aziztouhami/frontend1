@@ -1,22 +1,49 @@
 <button class="menu-btn" (click)="toggleLeftBar()">☰</button>
 <div class="leftbar" [class.active]="leftBarVisible" > 
+ <!--  <img src="../../assets/think.png" alt="Icon Description"> -->
+ 
   <ng-container *ngIf="test; else elsecontent">
-    <div class="horizontal-container1">
-      <img src="../../assets/Subscriptions.png" alt="Subscription">
+    <div class="horizontal-container4">
+       <!-- <img src="../../assets/Subscriptions.png" alt="Subscription"> -->
       <!-- Lien avec routeur -->
       <a routerLink="/content/abonnements">Subscriptions</a>
     </div>
-    <div  class="horizontal-container">
-    <img src="../../assets/Padlock.png" alt="Diagram">
-    <a routerLink="/content/abonnements">Graphic</a>
+  <ng-container *ngIf="testA; else elseifcontent">
+    <div  class="horizontal-container1">
+    <a >Graphic</a>
     </div>
-    </ng-container>
-  
+    <div  (click)="navigateToHistorique()" class="horizontal-container4">
+    <a >History</a>
+  </div>
+  </ng-container>
+  <ng-template #elseifcontent>
+    <ng-container *ngIf="testH; else elsecontent">
+ 
+    <div  (click)="navigateToGraphique()" class="horizontal-container4">
+   <a >Graphic</a>
+   </div>
+   <div  class="horizontal-container1">
+   <a >History</a>
+ </div>
+</ng-container>
+<ng-template #elsecontent>
+  <div (click)="navigateToGraphique()" class="horizontal-container4">
+    <a >Graphic</a>
+    </div>
+    <div  (click)="navigateToHistorique()" class="horizontal-container4">
+    <a >History</a>
+  </div>
+  </ng-template>
+
+  </ng-template>
+  </ng-container>
+
    <!-- Template alternatif en cas de condition non remplie -->
     <ng-template #elsecontent>
       <div class="horizontal-container">
-        <img src="../assets/Subscriptions.png" alt="Subscription">
+      <!--  <img src="../assets/Subscriptions.png" alt="Subscription"> -->
         <a routerLink="/content/abonnements">Subscriptions</a>
       </div>
     </ng-template>
+    <button class="logout-btn" (click)='logout()'>Logout</button> 
   </div>

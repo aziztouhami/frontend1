@@ -136,3 +136,351 @@
       font-size: 1.5vh; 
     }
   }
+  .top-right-button {
+    position: absolute; /* Position absolue pour le bouton */
+    top: 5%; /* Positionnement en haut */
+    left: 90%; /* Positionnement à droite */
+    padding: 5px 10px; /* Padding pour le bouton */
+    cursor: pointer; /* Curseur pointeur */
+    background-color: transparent; /* Fond transparent */
+    color: #1B6182; /* Texte blanc */
+ border: 2px;
+    transition: background-color 0.1s ease; /* Transition pour l'effet de fond */
+    font-size: 2.5vh;
+}
+.top-right-button1 {
+  position: absolute; /* Position absolue pour le bouton */
+  top: 4%; /* Positionnement en haut */
+  right: 4%; /* Positionnement à droite */
+  padding: 5px 10px; /* Padding pour le bouton */
+  cursor: pointer; /* Curseur pointeur */
+  background-color: #721c24; /* Fond transparent */
+  color: #ffffff; /* Texte blanc */
+  transition: all 0.3s ease; /* Transitions douces pour tous les effets */
+  font-size: 2vh;
+  border: none;
+
+}
+.top-right-button1 :hover{
+  transform: scale(1.05); /* Agrandissement léger */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ombre pour la profondeur */
+}
+
+.top-right-button:hover {
+  border: 1px solid #1B6182; /* Bordure bleue de 4px au survol */
+    background-color: transparent; /* Fond transparent */
+    color: #1B6182; /* Texte blanc */
+  
+}
+
+
+.centered-rectangle-filtre{
+  width: 80%; 
+  height: 80%; 
+  background-color: #f8e0e2; 
+  position: absolute;
+  top: 55%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  z-index: 40;
+  border-radius: 20px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  display: flex; 
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+  
+ 
+  top: 5%;
+}
+
+.dropdown-checkbox {
+  display: none; /* Cache la checkbox utilisée pour le toggle */
+}
+
+.dropdown-label {
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Espacement entre le texte et l'icône */
+  cursor: pointer;
+  width: 90%; /* Largeur du dropdown */
+  margin-top: 50px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  width: 200px; /* Largeur du dropdown */
+  z-index: 1;
+}
+
+.dropdown-content label {
+  padding: 12px 16px;
+  display: block;
+  cursor: pointer;
+}
+
+/* Affiche le dropdown lorsque la checkbox est cochée */
+.dropdown-checkbox:checked + .dropdown-label + .dropdown-content {
+  display: block;
+}
+
+/* Flèche qui s'inverse lorsque le dropdown est ouvert */
+.dropdown-checkbox:checked + .dropdown-label .arrow {
+  transform: rotate(180deg);
+}
+
+.arrow {
+  transition: transform 0.3s ease; /* Animation pour la rotation */
+}
+.go-button {
+  margin-top: 50px;
+  padding: 10px 20px;
+  background-color: #1B6182; /* Vert pour indiquer une action positive */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 50%; /* Ajustez selon la largeur désirée */
+  display: block; /* Rend le bouton un bloc pour prendre en charge les marges */
+  margin-left: auto; /* Pousse le bouton à se centrer automatiquement */
+  margin-right: auto; /* Pousse le bouton à se centrer automatiquement */
+  font-weight: bold; /* Texte en gras pour une meilleure visibilité */
+  font-family: 'Roboto', sans-serif; /* Police sans-serif moderne */
+}
+
+.go-button:hover {
+  background-color: #2e7697; /* Une teinte de vert plus foncée au survol */
+}
+
+
+  @media only screen and (max-width: 320px) {
+     
+    .centered-rectangle-filtre {
+      width: 100%; /* Use full width for very small screens */
+      min-height: 60%; /* Higher minimum height */
+   
+    }
+  
+    .dropdown-label {
+      width: 65%; 
+      font-size: 10px;
+    }
+
+  
+    .go-button {
+      font-size: 12px; /* Even smaller font size for readability */
+      width: 70%; 
+    }
+    .centered-rectangle h1 {
+      font-size: 1.5vh; 
+ 
+    }
+    .top-right-button {
+ 
+      font-size: 2vh;
+      top: 6%;
+      left: 38%;
+  }
+  .top-right-button1 {
+ 
+    font-size: 1vh;
+    top: 3%;
+}
+  .centered-rectangle-filtre h1 {
+    font-size: 8px;
+    top: 20%;
+  }
+
+  }
+  @media only screen and (min-width: 321px) and (max-width: 480px) {
+
+    .centered-rectangle-filtre {
+      width: 100%; /* Use full width for very small screens */
+      min-height: 60%; /* Higher minimum height */
+   
+    }
+  
+    .dropdown-label {
+      width: 80%; 
+      font-size: 10px;
+    }
+
+  
+    .go-button {
+      font-size: 12px; /* Even smaller font size for readability */
+      width: 70%; 
+    }
+    .centered-rectangle h1 {
+      font-size: 1.5vh; 
+ 
+    }
+    .top-right-button {
+ 
+      font-size: 2vh;
+      top: 8%;
+      left: 38%;
+
+  }
+  .top-right-button1 {
+ 
+    font-size: 1vh;
+    top: 3%;
+}
+  .centered-rectangle-filtre h1 {
+    font-size: 10px;
+    top: 20%;
+  }
+  }
+  @media only screen and (min-width: 481px) and (max-width: 600px) {
+    .centered-rectangle-filtre {
+      width: 100%; /* Use full width for very small screens */
+      min-height: 60%; /* Higher minimum height */
+   
+    }
+  
+    .dropdown-label {
+      width: 80%; 
+      font-size: 12px;
+    }
+
+  
+    .go-button {
+      font-size: 12px; /* Even smaller font size for readability */
+      width: 70%; 
+    }
+    .centered-rectangle h1 {
+      font-size: 2vh; 
+ 
+    }
+    .top-right-button {
+ 
+      font-size: 2vh;
+      top: 6%;
+      left: 38%;
+
+  }
+  .top-right-button1 {
+ 
+    font-size: 1vh;
+    top: 3%;
+}
+  .centered-rectangle-filtre h1 {
+    font-size: 10px;
+    top: 20%;
+  }
+  }
+  @media only screen and (min-width: 601px) and (max-width: 768px) {
+    .centered-rectangle-filtre {
+      width: 100%; /* Use full width for very small screens */
+      min-height: 60%; /* Higher minimum height */
+   
+    }
+  
+    .dropdown-label {
+      width: 80%; 
+      font-size: 12px;
+    }
+
+  
+    .go-button {
+      font-size: 12px; /* Even smaller font size for readability */
+      width: 70%; 
+    }
+    .centered-rectangle h1 {
+      font-size: 2vh; 
+ 
+    }
+    .top-right-button {
+ 
+      font-size: 2vh;
+      top: 6%;
+      left: 38%;
+
+  }
+  .top-right-button1 {
+ 
+    font-size: 1vh;
+    top: 3%;
+}
+  .centered-rectangle-filtre h1 {
+    font-size: 10px;
+    top: 20%;
+  }
+  .centered-rectangle{
+    top: 54%;
+  }
+  }
+  @media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .centered-rectangle-filtre {
+      width: 100%; /* Use full width for very small screens */
+      min-height: 60%; /* Higher minimum height */
+   
+    }
+  
+    .dropdown-label {
+      width: 90%; 
+      font-size: 12px;
+    }
+
+  
+    .go-button {
+      font-size: 12px; /* Even smaller font size for readability */
+      width: 70%; 
+    }
+    .centered-rectangle h1 {
+      font-size: 2vh; 
+ 
+    }
+    .top-right-button {
+ 
+      font-size: 2vh;
+      top: 7%;
+      left: 40%;
+
+  }
+  .top-right-button1 {
+ 
+    font-size: 1vh;
+    top: 3%;
+}
+  .centered-rectangle-filtre h1 {
+    font-size: 10px;
+    top: 20%;
+  }
+  .centered-rectangle{
+    top: 54%;
+  }
+  }
+  @media only screen and (min-width: 1025px) and (max-width: 1280px) {
+    .centered-rectangle h1 {
+      font-size: 1.5vh; 
+ 
+    }
+    .top-right-button {
+ 
+      font-size: 2vh;
+      top: 8%;
+      left: 38%;
+
+  }
+ .centered-rectangle{
+  top: 55%;
+ }
+  }
+  @media only screen and (min-width: 1281px) and (max-width: 1920px) {
+
+  .centered-rectangle{
+    top: 55%;
+   }
+  }
+  @media only screen and (min-width: 1921px) {}

@@ -1,21 +1,24 @@
 /* Styles pour la barre latérale droite */
 .rightbar {
-  background-color: rgba(255, 255, 255, 0.5);
-  border-left: 3px solid rgba(255, 255, 255, 1);
-  color: #ffffff;
+  background-image: linear-gradient(45deg, #ffffff81, #ffffffd2);
+  color: #1B6182;
   width: 15%;
   height: 100%;
   position: fixed;
-  top: 0;
-  right: 0;
+  top: 0%;
+  right: 0%;
   padding: 2%;
   display: flex;
   align-items: center;
   flex-direction: column;
   max-height: 100%;
   font-family: 'Roboto', sans-serif;
+  box-shadow: -4px 0 8px -2px rgba(0, 0, 0, 0.3); /* Ajout de l'ombre à gauche */
+
 
 }
+
+
 /* Styles pour le bouton du menu */
 .menu-btn {
   display: none; 
@@ -26,21 +29,24 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
-  height: 20px;
-  width: 20px;
-  color: white;
-  font-size: 0.5rem;
+  height: 30%; /* Ajusté de 20% à 30% */
+  width: 30%; /* Ajusté de 20% à 30% */
+  color: #1B6182;
   z-index: 105; 
+  font-size: 50px; /* Ajustement de la taille de la police pour mieux correspondre à la taille du bouton */
 }
+
 
 /* Styles pour le bouton du menu lorsque la barre latérale est fermée */
 .rightbar.is-closed + .menu-btn {
   right: 10%; 
   padding-right: 30%;
+ 
 }
 /* Styles pour le bouton du menu lorsque la barre latérale est ouverte */
 .rightbar.is-open + .menu-btn {
   right: 50%; 
+
 }
 .rightbar.is-open {
   display: flex; 
@@ -72,43 +78,9 @@
 
 }
 
-.TenantName{
-  padding-top: 16%; 
-  margin-top: 10%;
-  font-size: 2.5vh;
-  width: 100%;
-  text-align: center;
-}
-
-.logout-btn {
-  width: auto;
-  max-width: 100%; 
-  margin: 0 auto; 
-  padding: 10px 20px;
-  font-size: 2vh; 
-  background-color: #ffffff;
-  color: #1B6182; 
-  border: 2px solid #ffffff; 
-  border-radius: 20px;
-  cursor: pointer;
-  width: 12%;
-  text-align: center;
-  transition: background-color 0.3s, color 0.3s;
-  font-family: 'Roboto', sans-serif;
-  position: fixed;
-  bottom: 5%;
-  font-weight: bold;
-  overflow: hidden; 
-  white-space: nowrap; 
-  text-overflow: ellipsis; 
-  width: auto;
-  max-width: 90%; 
-  z-index: 10; 
-  
-}
-.logout-btn:hover {
-color: #ffffff; 
-  background-color: transparent; 
+.UserName:hover, .Adresse:hover {
+  transform: scale(1.05); /* Agrandissement léger */
+  text-shadow: 2px 2px 4px #ffffff; /* Ombre blanche */
 
 }
 
@@ -118,14 +90,29 @@ white-space: normal;
 overflow-wrap: break-word; 
 }
 
-/* Media queries pour les écrans de différentes tailles */
-@media (max-width: 769px) {
-.rightbar {
-    width: 40%; 
+
+
+@media only screen and (max-width: 320px) {
+
+
+  .rightbar {
+    width: 50%; 
+    background-color: aqua;
    
 }
 .menu-btn {
   display: block; 
+  width: 35%;
+  height: 35%;
+  position: fixed; 
+  top: 5%; 
+  transform: translateY(-50%); 
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #1B6182;
+  z-index: 105; 
+  font-size: 30px;
 }
 
 .rightbar {
@@ -137,67 +124,460 @@ overflow-wrap: break-word;
 .rightbar.active {
   display: flex; 
 }
+
+.rightbar i {
+  padding-top: 50%; 
+  font-size: 6vh;
+
 }
 
-@media (max-width: 768px) {
-.rightbar {
-    width: 35%;
-    display: none; 
-    background-color: #14D0D0;
+.UserName{
+  padding-top: 12%;
+  margin-top: 15%;
+  font-size: 3vh;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+
 }
-.rightbar.active {
-    display: flex; 
+
+.Adresse{
+  padding-top: 15%; 
+  margin-top: 20%;
+  font-size: 2.5vh;
+  width: 100%;
+  text-align: center;
+
+
+}
+
+
+
+}
+@media only screen and (min-width: 321px) and (max-width: 480px) {
+  .rightbar {
+    width: 50%; 
+    background-color: aqua;
+   
 }
 .menu-btn {
+  display: block; 
+  width: 30%;
+  height: 30%;
+  position: fixed; 
+  top: 3%; 
+  transform: translateY(-50%); 
   background-color: transparent;
-   border: none;
-   cursor: pointer;
-   height: 40px;
-   width: 40px; 
-   color: white;
-   font-size: 2rem
-   
- }
+  border: none;
+  cursor: pointer;
+  color: #1B6182;
+  z-index: 105; 
+  font-size: 30px;
+}
 
 .rightbar {
   width: 40%; 
   display: none; 
+  
 }
 
 .rightbar.active {
   display: flex; 
 }
+
+.rightbar i {
+  padding-top: 50%; 
+  font-size: 6vh;
+
 }
-@media (max-width: 683px) {
-.rightbar {
-    width: 35%; 
-    display: none; 
-    background-color: #14d0d0;
+
+.UserName{
+  padding-top: 12%;
+  margin-top: 15%;
+  font-size: 3vh;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+
 }
-.rightbar.active {
-    display: flex;
+
+.Adresse{
+  padding-top: 15%; 
+  margin-top: 20%;
+  font-size: 2.5vh;
+  width: 100%;
+  text-align: center;
+
+
+}
+
+
+
+}
+@media only screen and (min-width: 481px) and (max-width: 600px) {
+  .rightbar {
+    width: 50%; 
+    background-color: aqua;
+   
 }
 .menu-btn {
+  display: block; 
+  width: 35%;
+  height: 35%;
+  position: fixed; 
+  top: 5%; 
+  transform: translateY(-50%); 
   background-color: transparent;
-   border: none;
-   cursor: pointer;
-   height: 40px;
-   width: 40px; 
-   color: white;
-   font-size: 2rem
-   
- }
+  border: none;
+  cursor: pointer;
+  color: #1B6182;
+  z-index: 105; 
+  font-size: 35px;
+}
 
 .rightbar {
-  width: 40%;
+  width: 40%; 
   display: none; 
- 
+  
 }
 
 .rightbar.active {
   display: flex; 
 }
+
+.rightbar i {
+  padding-top: 50%; 
+  font-size: 6vh;
+
 }
 
+.UserName{
+  padding-top: 12%;
+  margin-top: 15%;
+  font-size: 3vh;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+
+}
+
+.Adresse{
+  padding-top: 15%; 
+  margin-top: 20%;
+  font-size: 2.5vh;
+  width: 100%;
+  text-align: center;
+
+
+}
+
+
+}
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+
+  .rightbar {
+    width: 50%; 
+    background-color: aqua;
+   
+}
+.menu-btn {
+  display: block; 
+  width: 30%;
+  height: 30%;
+  position: fixed; 
+  top: 4%; 
+  transform: translateY(-50%); 
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #1B6182;
+  z-index: 105; 
+  font-size: 35px;
+  right: 0%;
+}
+
+.rightbar {
+  width: 40%; 
+  display: none; 
+  
+}
+
+.rightbar.active {
+  display: flex; 
+}
+
+.rightbar i {
+  padding-top: 50%; 
+  font-size: 8vh;
+
+}
+
+.UserName{
+  padding-top: 12%;
+  margin-top: 15%;
+  font-size: 3vh;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+
+}
+
+.Adresse{
+  padding-top: 15%; 
+  margin-top: 20%;
+  font-size: 2.5vh;
+  width: 100%;
+  text-align: center;
+
+
+}
+
+}
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+
+  .rightbar {
+    width: 50%; 
+    background-color: aqua;
+   
+}
+.menu-btn {
+  display: block; 
+  width: 25%;
+  height: 25%;
+  position: fixed; 
+  top: 2%; 
+  transform: translateY(-50%); 
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #1B6182;
+  z-index: 105; 
+  font-size: 40px;
+  right: 0%;
+}
+
+.rightbar {
+  width: 40%; 
+  display: none; 
+  
+}
+
+.rightbar.active {
+  display: flex; 
+}
+
+.rightbar i {
+  padding-top: 20%; 
+  font-size: 8vh;
+
+}
+
+.UserName{
+  padding-top: 10%;
+  margin-top: 12%;
+  font-size: 3vh;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+
+}
+
+.Adresse{
+  padding-top: 12%; 
+  margin-top: 18%;
+  font-size: 2.5vh;
+  width: 100%;
+  text-align: center;
+
+
+}
+
+
+}
+@media only screen and (min-width: 1025px) and (max-width: 1280px) {
+
+  
+  .rightbar {
+    width: 50%; 
+    background-color: aqua;
+   
+}
+.menu-btn {
+  display: block; 
+  width: 45%;
+  height: 45%;
+  position: fixed; 
+  top: 5%; 
+  transform: translateY(-50%); 
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #1B6182;
+  z-index: 105; 
+  font-size: 35px;
+  right: 0%;
+}
+
+.rightbar {
+  width: 40%; 
+  display: none; 
+  
+}
+
+.rightbar.active {
+  display: flex; 
+}
+
+.rightbar i {
+  padding-top: 20%; 
+  font-size: 8vh;
+
+}
+
+.UserName{
+  padding-top: 10%;
+  margin-top: 12%;
+  font-size: 3vh;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+
+}
+
+.Adresse{
+  padding-top: 12%; 
+  margin-top: 18%;
+  font-size: 2.5vh;
+  width: 100%;
+  text-align: center;
+
+
+}
+
+
+}
+@media only screen and (min-width: 800px) and (max-width: 1285px) {
+
+  .rightbar {
+    width: 50%; 
+    background-color: aqua;
+   
+}
+.menu-btn {
+  display: block; 
+  width: 45%;
+  height: 45%;
+  position: fixed; 
+  top: 5%; 
+  transform: translateY(-50%); 
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #1B6182;
+  z-index: 105; 
+  font-size: 35px;
+  right: 0%;
+}
+
+.rightbar {
+  width: 40%; 
+  display: none; 
+  
+}
+
+.rightbar.active {
+  display: flex; 
+}
+
+.rightbar i {
+  padding-top: 20%; 
+  font-size: 8vh;
+
+}
+
+.UserName{
+  padding-top: 10%;
+  margin-top: 12%;
+  font-size: 3vh;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+
+}
+
+.Adresse{
+  padding-top: 12%; 
+  margin-top: 18%;
+  font-size: 2.5vh;
+  width: 100%;
+  text-align: center;
+
+
+}
+
+
+
+}
+@media only screen and (min-width: 1281px) and (max-width: 1062px) {
+
+  
+  .rightbar {
+    width: 50%; 
+    background-color: aqua;
+   
+}
+.menu-btn {
+  display: block; 
+  width: 45%;
+  height: 45%;
+  position: fixed; 
+  top: 5%; 
+  transform: translateY(-50%); 
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #1B6182;
+  z-index: 105; 
+  font-size: 35px;
+  right: 0%;
+}
+
+.rightbar {
+  width: 40%; 
+  display: none; 
+  
+}
+
+.rightbar.active {
+  display: flex; 
+}
+
+.rightbar i {
+  padding-top: 20%; 
+  font-size: 8vh;
+
+}
+
+.UserName{
+  padding-top: 10%;
+  margin-top: 12%;
+  font-size: 3vh;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+
+}
+
+.Adresse{
+  padding-top: 12%; 
+  margin-top: 18%;
+  font-size: 2.5vh;
+  width: 100%;
+  text-align: center;
+
+
+}
+
+}
 
 

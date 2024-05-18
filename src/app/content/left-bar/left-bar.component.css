@@ -1,7 +1,6 @@
 /* Barre latérale gauche */
 .leftbar {
-  background-color: rgba(255, 255, 255, 0.5); 
-  border-right: 3px solid rgba(255, 255, 255, 1); 
+  background-color: rgba(255, 255, 255, 0.833);
   color: #ffffff; 
   width: 15%;
   height: 100%;
@@ -14,72 +13,72 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  font-size: 100%;
   font-weight: bold;
   max-height: 100%;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Arial', sans-serif;
+  box-shadow: 4px 0 8px -2px rgba(0, 0, 0, 0.3); /* Ajout de l'ombre à droite */
+  user-select: none; /* Empêche la sélection du texte */
+}
 
+
+/* Styles communs pour tous les conteneurs */
+.horizontal-container, .horizontal-container1, .horizontal-container4 , .horizontal-container5 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;  /* Padding optimisé pour un meilleur équilibre */
+  margin: 10px 0 10px 20px; /* Marge constante */
+  border-radius: 5px; /* Coins légèrement arrondis */
+  width: 55%; /* Largeur standardisée */
+  height: 5%; /* Hauteur appropriée */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Ombre légère pour le relief */
+  transition: all 0.3s ease; /* Transitions douces pour tous les effets */
+  font-family: 'Roboto', sans-serif; /* Police sans-serif moderne */
+  font-size: 2vh; /* Taille de police lisible */
+  font-weight: bold; /* Texte en gras pour une meilleure visibilité */
+  letter-spacing: 0.5px; /* Espacement des lettres légèrement augmenté */
+  margin-left: auto;
+  margin-right: auto; /* et à droite pour centrer horizontalement */
+  cursor: pointer; 
+ 
+}
+
+/* Couleurs de fond spécifiques pour chaque conteneur */
+.horizontal-container {
+  background-color: #1B6182; /* Couleur de fond lavande */
 }
 
 .horizontal-container1 {
-    display: flex;
-    flex-direction: row;
-    align-items: center; 
-    justify-content: center;
-    background-color: #efefef09; 
-    padding: 5px; 
-    margin: 15px 0; 
-    border-radius: 40px; 
-    width: 70%;
-    height: 4%;
-    padding: 10px; 
-    margin: 10px 0; 
-  }
+  background-color: #5e6472; /* Couleur de fond gris-lavande */
+}
+
+.horizontal-container4 {
+  background-color: #1B6182; /* Identique à .horizontal-container */
+}
 
 
 
+/* Effets de survol pour tous les conteneurs */
+.horizontal-container:hover, .horizontal-container1:hover, .horizontal-container4:hover  {
+  background-color: #5e6472; /* Couleur lors du survol */
+  transform: scale(1.05); /* Agrandissement léger */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ombre pour la profondeur */
 
-  
+}
 
-  .horizontal-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center; 
-    justify-content: center;
-    background-color: #EFEFEF; 
-    padding: 5px; 
-    margin: 15px 0; 
-    border-radius: 40px; 
-    width: 70%;
-    height: 4%;
-    padding: 10px; 
-    margin: 10px 0; 
-    overflow: hidden; 
-    white-space: nowrap; 
-    text-overflow: ellipsis; 
-  }
 
-  .leftbar img {
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-  justify-content: center;
-  width: 15%;
-  margin-right:5%; 
-
-  }
 
   .leftbar a {
-    color: #1B6182; 
+    color: #ffffff; 
     text-decoration: none; 
-    font-size: 16px;
+    font-size: 2vh;
   }
 
 
-  .sidebar a:hover {
-    background-color: #575757; 
-    color: #f1faee; 
-  }
 
   .menu-btn {
     display: none;
@@ -95,39 +94,39 @@
     font-size: 16px;
     border-radius: 5px; 
   }
-/* Médias query pour les écrans de taille inférieure à 992px */
-  @media (max-width: 992px) { 
-    .leftbar {
-      width: 50%;
-      display: none; 
-      background-color: white; 
-      
-    }
-    .menu-btn {
-     
-      display: block;
-    }
-   
+  .logout-btn {
+    width: 10%;  /* Largeur standardisée */
+    height: 7%;  /* Hauteur appropriée */
+    background-color: #1B6182;  /* Couleur de fond */
+    position: fixed;
+    bottom: 5%;
+    padding: 8px 16px;  /* Padding optimisé pour un meilleur équilibre */
+    margin: 10px auto; /* Marge ajustée pour centrer le bouton */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    box-shadow: 0 1px 3px rgba(255, 255, 255, 0.1);  /* Ombre légère pour le relief */
+    transition: all 0.3s ease; /* Transitions douces pour tous les effets */
+    font-family: 'Roboto', sans-serif; /* Police sans-serif moderne */
+    font-size: 2vh; /* Taille de police lisible */
+    font-weight: bold; /* Texte en gras pour une meilleure visibilité */
+    letter-spacing: 0.5px; /* Espacement des lettres légèrement augmenté */
+    border: none;  /* Supprime toute bordure */
+    color: #ffffff; /* Couleur de texte */
+    cursor: pointer;  /* Change le curseur en main */
+    border-radius: 5px;
   }
   
-  /* Médias query pour les écrans de taille inférieure à 768px */
-  @media (max-width: 768px) { 
-    .leftbar {
-      width: 40%; 
-      display: none; 
-      background-color: white; 
-    }
-    .leftbar.active {
-      display: flex; 
-    }
-    .menu-btn {
-      
-      display: block;
-    }
+  .logout-btn:hover {
+    transform: scale(1.05); /* Agrandissement léger */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ombre plus profonde pour la profondeur */
+    background-color: #2e7697;
   }
   
-/* Médias query pour les écrans de taille inférieure à 683px */
-  @media (max-width: 683px) { 
+
+  @media only screen and (max-width: 320px) {
+
+
     .leftbar {
       width: 50%; 
       display: none; 
@@ -137,7 +136,301 @@
       display: flex;
     }
     .menu-btn {
-      
       display: block;
     }
+    .horizontal-container, .horizontal-container1, .horizontal-container4, .logout-btn {
+      width: 50%; /* Utilise presque toute la largeur */
+      height: 5%; /* Hauteur plus petite */
+      font-size: 1vh; /* Taille de police plus petite pour l'économie d'espace */
+      margin: 10px 0; /* Marges verticales réduites */
+    }
+    .logout-btn {
+      width: 30%;  /* Largeur standardisée */
+      height: 8%;  /* Hauteur appropriée */
+      font-family: 'Roboto', sans-serif; /* Police sans-serif moderne */
+      font-size: 3vh; /* Taille de police lisible */
+     
+    }
+    .leftbar a {
+      color: #ffffff; 
+      text-decoration: none; 
+      font-size: 2vh;
+    }
+  
+
+    
+
+  }
+  @media only screen and (min-width: 321px) and (max-width: 480px) {
+
+
+    .leftbar {
+      width: 50%; 
+      display: none; 
+      background-color: white; 
+    }
+    .leftbar.active {
+      display: flex;
+    }
+    .menu-btn {
+      display: block;
+    }
+    .horizontal-container, .horizontal-container1, .horizontal-container4, .logout-btn {
+      width: 50%; /* Utilise presque toute la largeur */
+      height: 5%; /* Hauteur plus petite */
+      font-size: 1vh; /* Taille de police plus petite pour l'économie d'espace */
+      margin: 10px 0; /* Marges verticales réduites */
+    }
+    .logout-btn {
+      width: 30%;  /* Largeur standardisée */
+      height: 8%;  /* Hauteur appropriée */
+      font-family: 'Roboto', sans-serif; /* Police sans-serif moderne */
+      font-size: 2vh; /* Taille de police lisible */
+     
+    }
+    .leftbar a {
+      color: #ffffff; 
+      text-decoration: none; 
+      font-size: 2vh;
+    }
+
+
+  }
+  @media only screen and (min-width: 481px) and (max-width: 600px) {
+
+
+    .leftbar {
+      width: 50%; 
+      display: none; 
+      background-color: white; 
+    }
+    .leftbar.active {
+      display: flex;
+    }
+    .menu-btn {
+      display: block;
+    }
+    .horizontal-container, .horizontal-container1, .horizontal-container4, .logout-btn {
+      width: 50%; /* Utilise presque toute la largeur */
+      height: 5%; /* Hauteur plus petite */
+      font-size: 1vh; /* Taille de police plus petite pour l'économie d'espace */
+      margin: 10px 0; /* Marges verticales réduites */
+    }
+    .logout-btn {
+      width: 30%;  /* Largeur standardisée */
+      height: 8%;  /* Hauteur appropriée */
+      font-family: 'Roboto', sans-serif; /* Police sans-serif moderne */
+      font-size: 3vh; /* Taille de police lisible */
+     
+    }
+    .leftbar a {
+      color: #ffffff; 
+      text-decoration: none; 
+      font-size: 3vh;
+    }
+
+
+
+  }
+  @media only screen and (min-width: 601px) and (max-width: 768px) {
+
+
+    .leftbar {
+      width: 49%; 
+      display: none; 
+      background-color: white; 
+    }
+    .leftbar.active {
+      display: flex;
+    }
+    .menu-btn {
+      display: block;
+    }
+    .horizontal-container, .horizontal-container1, .horizontal-container4, .logout-btn {
+      width: 50%; /* Utilise presque toute la largeur */
+      height: 5%; /* Hauteur plus petite */
+      font-size: 1vh; /* Taille de police plus petite pour l'économie d'espace */
+      margin: 10px 0; /* Marges verticales réduites */
+    }
+    .logout-btn {
+      width: 30%;  /* Largeur standardisée */
+      height: 8%;  /* Hauteur appropriée */
+      font-family: 'Roboto', sans-serif; /* Police sans-serif moderne */
+      font-size: 3vh; /* Taille de police lisible */
+     
+    }
+    .leftbar a {
+      color: #ffffff; 
+      text-decoration: none; 
+      font-size: 3vh;
+    }
+
+    
+    .menu-btn {
+     
+      font-size: 3vh;
+   
+    }
+
+
+  }
+  @media only screen and (min-width: 769px) and (max-width: 1024px) {
+
+    .leftbar {
+      width: 49%; 
+      display: none; 
+      background-color: white; 
+    }
+    .leftbar.active {
+      display: flex;
+    }
+    .menu-btn {
+      display: block;
+    }
+    .horizontal-container, .horizontal-container1, .horizontal-container4, .logout-btn {
+      width: 50%; /* Utilise presque toute la largeur */
+      height: 5%; /* Hauteur plus petite */
+      font-size: 1vh; /* Taille de police plus petite pour l'économie d'espace */
+      margin: 10px 0; /* Marges verticales réduites */
+    }
+    .logout-btn {
+      width: 30%;  /* Largeur standardisée */
+      height: 7%;  /* Hauteur appropriée */
+      font-family: 'Roboto', sans-serif; /* Police sans-serif moderne */
+      font-size: 3vh; /* Taille de police lisible */
+     
+    }
+    .leftbar a {
+      color: #ffffff; 
+      text-decoration: none; 
+      font-size: 3vh;
+    }
+
+    .menu-btn {
+     
+      font-size: 4vh;
+   
+    }
+  }
+  @media only screen and (min-width: 1025px) and (max-width: 1280px) {
+
+
+    .leftbar {
+      width: 49%; 
+      display: none; 
+      background-color: white; 
+    }
+    .leftbar.active {
+      display: flex;
+    }
+    .menu-btn {
+      display: block;
+    }
+    .horizontal-container, .horizontal-container1, .horizontal-container4, .logout-btn {
+      width: 50%; /* Utilise presque toute la largeur */
+      height: 5%; /* Hauteur plus petite */
+      font-size: 1vh; /* Taille de police plus petite pour l'économie d'espace */
+      margin: 10px 0; /* Marges verticales réduites */
+    }
+    .logout-btn {
+      width: 30%;  /* Largeur standardisée */
+      height: 8%;  /* Hauteur appropriée */
+      font-family: 'Roboto', sans-serif; /* Police sans-serif moderne */
+      font-size: 3vh; /* Taille de police lisible */
+     
+    }
+    .leftbar a {
+      color: #ffffff; 
+      text-decoration: none; 
+      font-size: 3vh;
+    }
+
+    .menu-btn {
+     
+      font-size: 4vh;
+   
+    }
+
+  }
+  @media only screen and (min-width: 800px) and (max-width: 1285px) {
+
+    
+    .leftbar {
+      width: 49%; 
+      display: none; 
+      background-color: white; 
+    }
+    .leftbar.active {
+      display: flex;
+    }
+    .menu-btn {
+      display: block;
+    }
+    .horizontal-container, .horizontal-container1, .horizontal-container4, .logout-btn {
+      width: 50%; /* Utilise presque toute la largeur */
+      height: 5%; /* Hauteur plus petite */
+      font-size: 1vh; /* Taille de police plus petite pour l'économie d'espace */
+      margin: 10px 0; /* Marges verticales réduites */
+    }
+    .logout-btn {
+      width: 30%;  /* Largeur standardisée */
+      height: 8%;  /* Hauteur appropriée */
+      font-family: 'Roboto', sans-serif; /* Police sans-serif moderne */
+      font-size: 3vh; /* Taille de police lisible */
+     
+    }
+    .leftbar a {
+      color: #ffffff; 
+      text-decoration: none; 
+      font-size: 2vh;
+    }
+
+    .menu-btn {
+     
+      font-size: 3vh;
+   
+    }
+
+
+  }
+
+  @media only screen and (max-width: 1281px)and(min-width: 1062px) {
+
+    .leftbar {
+      width: 49%; 
+      display: none; 
+      background-color: white; 
+    }
+    .leftbar.active {
+      display: flex;
+    }
+    .menu-btn {
+      display: block;
+    }
+    .horizontal-container, .horizontal-container1, .horizontal-container4, .logout-btn {
+      width: 50%; /* Utilise presque toute la largeur */
+      height: 5%; /* Hauteur plus petite */
+      font-size: 1vh; /* Taille de police plus petite pour l'économie d'espace */
+      margin: 10px 0; /* Marges verticales réduites */
+    }
+    .logout-btn {
+      width: 30%;  /* Largeur standardisée */
+      height: 8%;  /* Hauteur appropriée */
+      font-family: 'Roboto', sans-serif; /* Police sans-serif moderne */
+      font-size: 3vh; /* Taille de police lisible */
+     
+    }
+    .leftbar a {
+      color: #ffffff; 
+      text-decoration: none; 
+      font-size: 3vh;
+    }
+
+    .menu-btn {
+     
+      font-size: 4vh;
+   
+    }
+
+
   }

@@ -10,275 +10,1186 @@ body, html {
 }
 /* Styles pour l'arrière-plan flou */
 .blurbackground {
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-  max-height: 100%;
-  background-color: #FAF7F7;
-  position:fixed;
+  width: 100vw; /* Utilisation de viewport width pour couvrir toute la largeur de la vue */
+  height: 100vh; /* Utilisation de viewport height pour couvrir toute la hauteur de la vue */
+  position: fixed;
+  top: 0; /* Fixé en haut de la page */
+  left: 0; /* Fixé à gauche de la page */
+  background-image: linear-gradient(to right, #00a3ef64, #14d0d06b); /* Dégradé de bleu à vert */
+  background-size: cover; /* S'assure que le fond couvre entièrement l'espace disponible */
+  background-position: center; /* Centre le fond */
 }
-/* Styles pour les cercles décoratifs */
-.circle {
-  width: 20%; 
-  height: 60%; 
-  background-color: #00A3EF; 
-  border-radius: 50%; 
+.login-box h2{
   position: absolute;
-  top: 15%; 
-  left: 40%; 
-  transform: translate(-50%, -50%);
-  filter: blur(50px); 
-  opacity: 0.9; 
+  text-align: left;
+  font-size: 2vh; /* Taille de police du titre */
+  color: #444444; /* Couleur du texte */
+  left: 12%;
+  bottom: 10%;
+  
 }
-
-.circle3 {
-  width: 100%; 
-  height: 100%;
-  background-color: #14D0D0; 
-  border-radius: 50%; 
+/* Styles pour positionner l'image de connexion à droite de l'écran */
+/* Styles pour positionner l'image de connexion à droite de l'écran */
+.loginimg {
   position: absolute;
-  bottom: 45%;
-  right: 12%;
-  transform: translate(50%, 50%); 
-  filter: blur(50px);
-  opacity: 0.9;
+  left: 10%; /* Ajusté pour ne pas coller totalement à droite */
+  top: 17%; /* Ajusté pour ne pas coller totalement en bas */
+  width: 30%; /* Largeur réduite à 30% de la largeur du viewport */
+  max-width: 100px; /* Largeur maximale pour éviter que l'image soit trop grande */
+  height: auto; /* Hauteur ajustée automatiquement pour conserver les proportions */
+  
 }
-
-
-.circle2 {
-  width: 90%;
-  height: 90%; 
-  background-color: #00A3EF; 
-  border-radius: 50%; 
+.loginimg1 {
   position: absolute;
-  bottom: 25%; 
-  right: 14%;
-  transform: translate(50%, 50%); 
-  filter: blur(50px);
-  opacity: 0.9; 
+  left: 10%; /* Ajusté pour ne pas coller totalement à droite */
+  top: 28%; /* Ajusté pour ne pas coller totalement en bas */
+  width: 30%; /* Largeur réduite à 30% de la largeur du viewport */
+  max-width: 320px; /* Largeur maximale pour éviter que l'image soit trop grande */
+  height: auto; /* Hauteur ajustée automatiquement pour conserver les proportions */
+  
 }
 
-/* Styles pour le logo INSOMEA */
+
+
+
+/* Styles pour le logo INSOMEA à gauche */
 .logo {
   position: absolute;
-  left: 3%;
-  top: 4%;
-  width: 9%; 
-  height: auto; 
-  z-index: 50;
-
+  top: 13%; /* Positionné en bas avec un décalage de 5% */
+  width: 20%; /* Largeur fixe de 20% du viewport */
+  height: auto; /* Hauteur ajustée automatiquement */
+  z-index: 50; /* Assure que le logo est bien visible par dessus le fond */
+  left: 16%; /* Décalé de 10% à partir de la gauche du viewport */
 }
 
-.rectangle {
+/* Styles pour le logo1 à droite */
+.logo1 {
   position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 45%; 
-  z-index: 10; 
-  background-color: #ffffff;
-  display: flex; 
-  align-items:center; 
-  justify-content: center;
-}
- 
-.lock {
-  display: flex; 
-  align-items:center; 
-  justify-content: center;
-  max-width: 80%; 
-  max-height: 80%; 
-  margin-left: 10%;
-  margin-right: 10%;
-  z-index: 50;
-  
-
-}
-
-
-.title {
-  color: #81D3F9;
-  text-align: center; 
-  margin-top: 5%; 
-  margin-bottom: 10%;
-  font-size: 3vw; 
-  font-weight: bold; 
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-  transition: color 0.5s ease; 
-  font-family: 'Roboto', sans-serif;
-}
-
-.title:hover {
-  animation: bounce 2s ease-in-out infinite; 
-  color: #2d86af; 
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-  font-family: 'Roboto', sans-serif;
-}
-.first-line {
-  display: block; 
-}
-
-.second-line {
-  display: block;
+  bottom: 0%; /* Positionné en bas avec un décalage de 5% */
+  width: 20%; /* Largeur fixe de 20% du viewport */
+  height: auto; /* Hauteur ajustée automatiquement */
+  z-index: 50; /* Assure que le logo est bien visible par dessus le fond */
+  right: 15%; /* Décalé de 10% à partir de la droite du viewport */
 }
 
 .login-box {
   position: absolute;
-  width: 25%; 
-  height: 60%;
+  width: 60%; 
+  height: 75%;
   margin: 0 auto;
   top: 50%;
-  left: 73%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(255, 255, 255, 0.2); 
+  background-image: linear-gradient(to right, #ffffff6f, #ffffff);
   border: 3px solid rgb(255, 255, 255);
   box-sizing: border-box; 
   padding: 20px; 
-  border-radius: 20px;
   text-align: center;
   font-family: 'Roboto', sans-serif;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Ajoute une ombre avec une opacité de 50% */
+}
+.login-box:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px; /* Épaisseur du trait */
+  height: 100%; /* Hauteur égale à celle de .login-box */
+  background-color: rgba(0, 0, 0, 0.1); /* Couleur du trait, ajustez l'opacité selon le besoin */
 }
 .login-box h1 {
-  color: #fff;
+  color: #1B6182;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
-  font-size: 4vw;
+  font-size: 4vw; /* Taille de police adaptative selon la largeur de la fenêtre */
   font-weight: bold;
-  margin-top: 10%;
-  margin-bottom: 35%;
+  margin-top: 5%;
+  margin-bottom: 15%;
+  position: relative; /* Position relative pour décaler par rapport à son emplacement normal */
+  left:25%; /* Décalage vers la droite; ajustez cette valeur selon vos besoins */
 }
+
 
 .login-button {
-  
-  background-color: rgba(255, 255, 255, 0.3);
-  border: 2px solid rgba(255, 255, 255, 1);
-  color: white;
-  padding: 5% 10%;
-  font-size: 100%;
-  cursor: pointer;
-  border-radius: 15px;
-  box-sizing: border-box;
-  overflow: hidden;
-  margin-left: 20%;
-  margin-right: 20%;
-  max-width: 100%; 
-  display: block;
-  width: 65%; /* Ajusté pour contrôler la largeur */
-  margin: 5% auto; /* Modifié pour centrer automatiquement */
+  background-color: #1B6182;
   display: flex;
-  align-items: center; 
-  justify-content: center; 
-  
-
+  right: 11%; /* Décalage à droite augmenté de 10% à 20% */
+  top: 41%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;  /* Augmentation du padding pour un bouton plus grand */
+  margin: 20px 0 20px 20px; /* Ajustement des marges pour une meilleure présentation */
+  border-radius: 8px; /* Coins plus arrondis pour un look moderne */
+  width: 30%; /* Augmentation de la largeur */
+  height: 12%; /* Augmentation de la hauteur */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  border: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Ombre légère pour le relief */
+  transition: all 0.3s ease; /* Transitions douces pour tous les effets */
+  font-family: 'Roboto', sans-serif; /* Police sans-serif moderne */
+  font-size: 18px; /* Taille de police lisible */
+  font-weight: bold; /* Texte en gras pour une meilleure visibilité */
+  letter-spacing: 0.5px; /* Espacement des lettres légèrement augmenté */
+  color: #ffffff;
+  cursor: pointer; 
+  position: absolute; /* Assurez-vous que cette ligne est ajoutée si elle n'est pas déjà là */
+  box-shadow: 0 6px 12px rgba(50, 50, 50, 0.5);
 }
+
 
 .login-button img {
   margin-right: 10px; 
 }
 .login-button:hover {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: #2a779a;
+  transform: scale(1.05); /* Agrandissement léger */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ombre pour la profondeur */
 }
 .error-message {
   color: red; 
-  text-align: center;
-  font-size: 2.5vh; 
+  
+  font-size: 10vh; 
   margin-top: 10%; 
   width: 100%; 
   padding:  5%; 
-  box-sizing: border-box;
-  box-sizing: border-box;
-  overflow: hidden; 
+  z-index: 500;
 }
 
 
-/* Media query pour les écrans de taille inférieure à 768px (taille de tablette) */
-@media only screen and (max-width: 768px) {
-.login-box {
-  position: absolute;
-  width: 35%; 
-  height: 60%;
-  margin: 0 auto;
-  top: 50%;
-  left: 73%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(255, 255, 255, 0.2); 
-  border: 3px solid rgb(255, 255, 255);
-  box-sizing: border-box; 
-  padding: 10px; 
-  border-radius: 20px;
-  text-align: center;
-  font-family: 'Roboto', sans-serif;
-}
-.login-button {
+@media only screen and (max-width: 320px)  {
+  .login-box h2{
+    position: absolute;
+    text-align: left;
+    font-size: 2vh; /* Taille de police du titre */
+    color: #444444; /* Couleur du texte */
+    left: 12%;
+    top:  25%;
+    white-space: nowrap; /* Empêche le passage à la ligne */
+    overflow: hidden; /* Cache tout contenu qui dépasse du conteneur */
+    text-overflow: ellipsis; /* Ajoute des points de suspension si le texte est coupé */
+    max-width: 76%; /* Ajustement pour ne pas déborder, en considérant le padding et le positionnement */
+  }
+  /* Styles pour positionner l'image de connexion à droite de l'écran */
+  /* Styles pour positionner l'image de connexion à droite de l'écran */
+  .loginimg {
+    width: 0%; /* Largeur réduite à 30% de la largeur du viewport */  
+  }
+  .loginimg1 {
+    width: 0%; /* Largeur réduite à 30% de la largeur du viewport */ 
+  }
   
-  background-color: rgba(255, 255, 255, 0.3);
-  border: 2px solid rgba(255, 255, 255, 1);
-  color: white;
-  padding: 5% 10%;
-  font-size: 100%;
-  cursor: pointer;
-  border-radius: 15px;
-  box-sizing: border-box;
-  overflow: hidden;
-  margin-left: 20%;
-  margin-right: 20%;
-  display: block;
-  width: 70%; /* Ajusté pour contrôler la largeur */
-  margin: 50% auto; /* Modifié pour centrer automatiquement */
-  display: flex;
-  align-items: center; 
-  justify-content: center; 
+
   
-}
-}
-/* Media query pour les écrans de taille inférieure à 768px (taille de tablette) */
-@media only screen and (max-width: 767px) {
-.rectangle {
-    width: 100%;
-    height: 45%;
-    left: 0;
+  
+  
+  /* Styles pour le logo INSOMEA à gauche */
+  .logo {
+    position: absolute;
+    top: 10%; /* Positionné en bas avec un décalage de 5% */
+    width: 35%; /* Largeur fixe de 20% du viewport */
+    height: auto; /* Hauteur ajustée automatiquement */
+    z-index: 50; /* Assure que le logo est bien visible par dessus le fond */
+    left: 34%; /* Décalé de 10% à partir de la gauche du viewport */
+  }
+  
+  /* Styles pour le logo1 à droite */
+  .logo1 {
+    position: absolute;
+    bottom: 0%; /* Positionné en bas avec un décalage de 5% */
+    width: 45%; /* Largeur fixe de 20% du viewport */
+    height: auto; /* Hauteur ajustée automatiquement */
+    z-index: 50; /* Assure que le logo est bien visible par dessus le fond */
+    right: 30%; /* Décalé de 10% à partir de la droite du viewport */
+  }
+  
+  .login-box {
+    display: flex;  /* Utilise Flexbox pour le positionnement */
+    flex-direction: column;  /* Les enfants (comme h2) sont disposés en colonne */
+    align-items: center;  /* Centre les enfants horizontalement */
+    justify-content: center;  /* Centre les enfants verticalement */
+    position: absolute;
+    width: 70%; 
+    height: 85%;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: linear-gradient(to right, #ffffff9b, #ffffff);
+    border: 3px solid rgb(255, 255, 255);
+    box-sizing: border-box; 
+    padding: 20px; 
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Ajoute une ombre avec une opacité de 50% */
+  }
+  .login-box:after {
+    content: "";
+    position: absolute;
     top: 0;
-    right: 0;
-    bottom: auto;
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
+    left: 50%;
+    transform: translateX(-50%);
+   
+    background-color:transparent;
+  }
+  .login-box h1 {
+    color: #1B6182;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    font-size: 5vh; /* Taille de police adaptative selon la largeur de la fenêtre */
+    font-weight: bold;
+    margin-top: 85%;
+    margin-bottom: 85%;
+    position: relative; /* Position relative pour décaler par rapport à son emplacement normal */
+    left:2.5%; /* Décalage vers la droite; ajustez cette valeur selon vos besoins */
+   
+  }
+  
+  
+  .login-button {
+    background-color: #1B6182;
+    display: flex;
+    right: 17%; /* Décalage à droite augmenté de 10% à 20% */
+    top: 55%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;  /* Augmentation du padding pour un bouton plus grand */
+    margin: 20px 0 20px 20px; /* Ajustement des marges pour une meilleure présentation */
+    border-radius: 8px; /* Coins plus arrondis pour un look moderne */
+    width: 65%; /* Augmentation de la largeur */
+    height: 10%; /* Augmentation de la hauteur */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Ombre légère pour le relief */
+    transition: all 0.3s ease; /* Transitions douces pour tous les effets */
+    font-family: 'Roboto', sans-serif; /* Police sans-serif moderne */
+    font-size: 2vh; /* Taille de police lisible */
+    font-weight: bold; /* Texte en gras pour une meilleure visibilité */
+    letter-spacing: 0.5px; /* Espacement des lettres légèrement augmenté */
+    color: #ffffff;
+    cursor: pointer; 
+    position: absolute; /* Assurez-vous que cette ligne est ajoutée si elle n'est pas déjà là */
+    box-shadow: 0 6px 12px rgba(50, 50, 50, 0.5);
+  }
+  
+  
+  .login-button img {
+    margin-right: 10px; 
+  }
+  .login-button:hover {
+    background-color: #2a779a;
+    transform: scale(1.05); /* Agrandissement léger */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ombre pour la profondeur */
+  }
+  .error-message {
+    color: red; 
+    text-align: center;
+    font-size: 2.5vh; 
+    margin-top: 10%; 
+    width: 100%; 
+    padding:  5%; 
+    box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden; 
+  }
+ 
+
+  
 }
-.lock {
-  width: 40%; /* Réduit la largeur pour que l'icône soit plus petite */
-  height: auto; /* Permet à la hauteur de s'ajuster proportionnellement */
-  max-width: 40%; /* Ajustez la largeur maximale */
-  max-height: none; /* Enlève la hauteur maximale si vous l'aviez définie */
-  margin: 0 auto; /* Centre l'élément dans son conteneur */
+@media only screen and (min-width: 321px) and (max-width: 480px) {
+
+  .login-box h2{
+    position: absolute;
+    text-align: left;
+    font-size: 2vh; /* Taille de police du titre */
+    color: #444444; /* Couleur du texte */
+    left: 12%;
+    top:  25%;
+   
+    margin: 0 auto; /* Centrage automatique du titre avec marges automatiques */
+    padding: 0;
+    white-space: nowrap; /* Empêche le passage à la ligne */
+    overflow: hidden; /* Cache tout contenu qui dépasse du conteneur */
+    text-overflow: ellipsis; /* Ajoute des points de suspension si le texte est coupé */
+    max-width: 76%; /* Ajustement pour ne pas déborder, en considérant le padding et le positionnement */
+  }
+  /* Styles pour positionner l'image de connexion à droite de l'écran */
+  /* Styles pour positionner l'image de connexion à droite de l'écran */
+  .loginimg {
+    width: 0%; /* Largeur réduite à 30% de la largeur du viewport */  
+  }
+  .loginimg1 {
+    width: 0%; /* Largeur réduite à 30% de la largeur du viewport */ 
+  }
+  
+
+  
+  /* Styles pour le logo INSOMEA à gauche */
+  .logo {
+    position: absolute;
+    top: 10%; /* Positionné en bas avec un décalage de 5% */
+    width: 45%; /* Largeur fixe de 20% du viewport */
+    height: auto; /* Hauteur ajustée automatiquement */
+    z-index: 50; /* Assure que le logo est bien visible par dessus le fond */
+    left: 28%; /* Décalé de 10% à partir de la gauche du viewport */
+  }
+  
+  /* Styles pour le logo1 à droite */
+  .logo1 {
+    position: absolute;
+    bottom: 0%; /* Positionné en bas avec un décalage de 5% */
+    width: 40%; /* Largeur fixe de 20% du viewport */
+    height: auto; /* Hauteur ajustée automatiquement */
+    z-index: 50; /* Assure que le logo est bien visible par dessus le fond */
+    right: 30%; /* Décalé de 10% à partir de la droite du viewport */
+  }
+  
+  .login-box {
+    display: flex;  /* Utilise Flexbox pour le positionnement */
+    flex-direction: column;  /* Les enfants (comme h2) sont disposés en colonne */
+    align-items: center;  /* Centre les enfants horizontalement */
+    justify-content: center;  /* Centre les enfants verticalement */
+    position: absolute;
+    width: 70%; 
+    height: 85%;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: linear-gradient(to right, #ffffff9b, #ffffff);
+    border: 3px solid rgb(255, 255, 255);
+    box-sizing: border-box; 
+    padding: 20px; 
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Ajoute une ombre avec une opacité de 50% */
+  }
+  .login-box:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+   
+    background-color:transparent;
+  }
+  .login-box h1 {
+    color: #1B6182;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    font-size: 5vh; /* Taille de police adaptative selon la largeur de la fenêtre */
+    font-weight: bold;
+  top: 0%;
+    position: relative; /* Position relative pour décaler par rapport à son emplacement normal */
+    left:2.5%; /* Décalage vers la droite; ajustez cette valeur selon vos besoins */
+   
+  }
+  
+  
+  .login-button {
+    background-color: #1B6182;
+    display: flex;
+    right: 17%; /* Décalage à droite augmenté de 10% à 20% */
+    top: 55%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;  /* Augmentation du padding pour un bouton plus grand */
+    margin: 20px 0 20px 20px; /* Ajustement des marges pour une meilleure présentation */
+    border-radius: 8px; /* Coins plus arrondis pour un look moderne */
+    width: 65%; /* Augmentation de la largeur */
+    height: 10%; /* Augmentation de la hauteur */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Ombre légère pour le relief */
+    transition: all 0.3s ease; /* Transitions douces pour tous les effets */
+    font-family: 'Roboto', sans-serif; /* Police sans-serif moderne */
+    font-size: 1.3vh; /* Taille de police lisible */
+    font-weight: bold; /* Texte en gras pour une meilleure visibilité */
+    letter-spacing: 0.5px; /* Espacement des lettres légèrement augmenté */
+    color: #ffffff;
+    cursor: pointer; 
+    position: absolute; /* Assurez-vous que cette ligne est ajoutée si elle n'est pas déjà là */
+    box-shadow: 0 6px 12px rgba(50, 50, 50, 0.5);
+  }
+  
+  
+  .login-button img {
+    margin-right: 10px; 
+  }
+  .login-button:hover {
+    background-color: #2a779a;
+    transform: scale(1.05); /* Agrandissement léger */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ombre pour la profondeur */
+  }
+  .error-message {
+    color: red; 
+    text-align: center;
+    font-size: 2.5vh; 
+    margin-top: 10%; 
+    width: 100%; 
+    padding:  5%; 
+    box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden; 
+  }
+
+
+}
+@media only screen and (min-width: 481px) and (max-width: 600px)  {
+
+
+  .login-box h2{
+    position: absolute;
+    text-align: left;
+    font-size: 2vh; /* Taille de police du titre */
+    color: #444444; /* Couleur du texte */
+    left: 20%;
+    top:  25%;
+    white-space: nowrap; /* Empêche le passage à la ligne */
+    overflow: hidden; /* Cache tout contenu qui dépasse du conteneur */
+    text-overflow: ellipsis; /* Ajoute des points de suspension si le texte est coupé */
+    max-width: 76%; /* Ajustement pour ne pas déborder, en considérant le padding et le positionnement */
+  }
+  /* Styles pour positionner l'image de connexion à droite de l'écran */
+  /* Styles pour positionner l'image de connexion à droite de l'écran */
+  .loginimg {
+    width: 0%; /* Largeur réduite à 30% de la largeur du viewport */  
+  }
+  .loginimg1 {
+    width: 0%; /* Largeur réduite à 30% de la largeur du viewport */ 
+  }
+  
+  
+  /* Styles pour le logo INSOMEA */
+  .logo {
+    position: absolute;
+    left: 3%;
+    top: 15%;
+    width: 80%; 
+    height: auto; 
+    z-index: 50;
+  
+  }
+  
+  
+  /* Styles pour le logo INSOMEA à gauche */
+  .logo {
+    position: absolute;
+    top: 10%; /* Positionné en bas avec un décalage de 5% */
+    width: 45%; /* Largeur fixe de 20% du viewport */
+    height: auto; /* Hauteur ajustée automatiquement */
+    z-index: 50; /* Assure que le logo est bien visible par dessus le fond */
+    left: 30%; /* Décalé de 10% à partir de la gauche du viewport */
+  }
+  
+  /* Styles pour le logo1 à droite */
+  .logo1 {
+    position: absolute;
+    bottom: 0%; /* Positionné en bas avec un décalage de 5% */
+    width: 40%; /* Largeur fixe de 20% du viewport */
+    height: auto; /* Hauteur ajustée automatiquement */
+    z-index: 50; /* Assure que le logo est bien visible par dessus le fond */
+    right: 30%; /* Décalé de 10% à partir de la droite du viewport */
+  }
+  
+  .login-box {
+    display: flex;  /* Utilise Flexbox pour le positionnement */
+    flex-direction: column;  /* Les enfants (comme h2) sont disposés en colonne */
+    align-items: center;  /* Centre les enfants horizontalement */
+    justify-content: center;  /* Centre les enfants verticalement */
+    position: absolute;
+    width: 70%; 
+    height: 85%;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: linear-gradient(to right, #ffffff9b, #ffffff);
+    border: 3px solid rgb(255, 255, 255);
+    box-sizing: border-box; 
+    padding: 20px; 
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Ajoute une ombre avec une opacité de 50% */
+  }
+  .login-box:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+   
+    background-color:transparent;
+  }
+  .login-box h1 {
+    color: #1B6182;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    font-size: 5vh; /* Taille de police adaptative selon la largeur de la fenêtre */
+    font-weight: bold;
+  top: 0%;
+    position: relative; /* Position relative pour décaler par rapport à son emplacement normal */
+    left:2.5%; /* Décalage vers la droite; ajustez cette valeur selon vos besoins */
+   
+  }
+  
+  
+  .login-button {
+    background-color: #1B6182;
+    display: flex;
+    right: 17%; /* Décalage à droite augmenté de 10% à 20% */
+    top: 55%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;  /* Augmentation du padding pour un bouton plus grand */
+    margin: 20px 0 20px 20px; /* Ajustement des marges pour une meilleure présentation */
+    border-radius: 8px; /* Coins plus arrondis pour un look moderne */
+    width: 65%; /* Augmentation de la largeur */
+    height: 10%; /* Augmentation de la hauteur */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Ombre légère pour le relief */
+    transition: all 0.3s ease; /* Transitions douces pour tous les effets */
+    font-family: 'Roboto', sans-serif; /* Police sans-serif moderne */
+    font-size: 1.4vh; /* Taille de police lisible */
+    font-weight: bold; /* Texte en gras pour une meilleure visibilité */
+    letter-spacing: 0.5px; /* Espacement des lettres légèrement augmenté */
+    color: #ffffff;
+    cursor: pointer; 
+    position: absolute; /* Assurez-vous que cette ligne est ajoutée si elle n'est pas déjà là */
+    box-shadow: 0 6px 12px rgba(50, 50, 50, 0.5);
+  }
+  
+  
+  .login-button img {
+    margin-right: 10px; 
+  }
+  .login-button:hover {
+    background-color: #2a779a;
+    transform: scale(1.05); /* Agrandissement léger */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ombre pour la profondeur */
+  }
+  .error-message {
+    color: red; 
+    text-align: center;
+    font-size: 2.5vh; 
+    margin-top: 10%; 
+    width: 100%; 
+    padding:  5%; 
+    box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden; 
+  }
+
+
+}
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+  .login-box h2{
+    position: absolute;
+    text-align: left;
+    font-size: 2vh; /* Taille de police du titre */
+    color: #444444; /* Couleur du texte */
+    left: 16%;
+    top:  25%;
+    white-space: nowrap; /* Empêche le passage à la ligne */
+    overflow: hidden; /* Cache tout contenu qui dépasse du conteneur */
+    text-overflow: ellipsis; /* Ajoute des points de suspension si le texte est coupé */
+    max-width: 76%; /* Ajustement pour ne pas déborder, en considérant le padding et le positionnement */
+  }
+  /* Styles pour positionner l'image de connexion à droite de l'écran */
+  /* Styles pour positionner l'image de connexion à droite de l'écran */
+  .loginimg {
+    width: 0%; /* Largeur réduite à 30% de la largeur du viewport */  
+  }
+  .loginimg1 {
+    width: 0%; /* Largeur réduite à 30% de la largeur du viewport */ 
+  }
+  
+  
+
+  
+  
+  /* Styles pour le logo INSOMEA à gauche */
+  .logo {
+    position: absolute;
+    top: 10%; /* Positionné en bas avec un décalage de 5% */
+    width: 45%; /* Largeur fixe de 20% du viewport */
+    height: auto; /* Hauteur ajustée automatiquement */
+    z-index: 50; /* Assure que le logo est bien visible par dessus le fond */
+    left: 30%; /* Décalé de 10% à partir de la gauche du viewport */
+  }
+  
+  /* Styles pour le logo1 à droite */
+  .logo1 {
+    position: absolute;
+    bottom: 0%; /* Positionné en bas avec un décalage de 5% */
+    width: 35%; /* Largeur fixe de 20% du viewport */
+    height: auto; /* Hauteur ajustée automatiquement */
+    z-index: 50; /* Assure que le logo est bien visible par dessus le fond */
+    right: 32%; /* Décalé de 10% à partir de la droite du viewport */
+  }
+  
+  .login-box {
+    position: absolute;
+    width: 75%; 
+    height: 85%;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: linear-gradient(to right, #ffffff9b, #ffffff);
+    border: 3px solid rgb(255, 255, 255);
+    box-sizing: border-box; 
+    padding: 20px; 
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Ajoute une ombre avec une opacité de 50% */
+  }
+  .login-box:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+   
+    background-color:transparent;
+  }
+  .login-box h1 {
+    color: #1B6182;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    font-size: 5vh; /* Taille de police adaptative selon la largeur de la fenêtre */
+    font-weight: bold;
+  top: 40%;
+    position: relative; /* Position relative pour décaler par rapport à son emplacement normal */
+    left:2.5%; /* Décalage vers la droite; ajustez cette valeur selon vos besoins */
+   
+  }
+  
+  
+  .login-button {
+    background-color: #1B6182;
+    display: flex;
+    right: 17%; /* Décalage à droite augmenté de 10% à 20% */
+    top: 55%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;  /* Augmentation du padding pour un bouton plus grand */
+    margin: 20px 0 20px 20px; /* Ajustement des marges pour une meilleure présentation */
+    border-radius: 8px; /* Coins plus arrondis pour un look moderne */
+    width: 65%; /* Augmentation de la largeur */
+    height: 10%; /* Augmentation de la hauteur */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Ombre légère pour le relief */
+    transition: all 0.3s ease; /* Transitions douces pour tous les effets */
+    font-family: 'Roboto', sans-serif; /* Police sans-serif moderne */
+    font-size: 1.8vh; /* Taille de police lisible */
+    font-weight: bold; /* Texte en gras pour une meilleure visibilité */
+    letter-spacing: 0.5px; /* Espacement des lettres légèrement augmenté */
+    color: #ffffff;
+    cursor: pointer; 
+    position: absolute; /* Assurez-vous que cette ligne est ajoutée si elle n'est pas déjà là */
+    box-shadow: 0 6px 12px rgba(50, 50, 50, 0.5);
+  }
+  
+  
+  .login-button img {
+    margin-right: 10px; 
+  }
+  .login-button:hover {
+    background-color: #2a779a;
+    transform: scale(1.05); /* Agrandissement léger */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ombre pour la profondeur */
+  }
+  .error-message {
+    color: red; 
+    text-align: center;
+    font-size: 2.5vh; 
+    margin-top: 10%; 
+    width: 100%; 
+    padding:  5%; 
+    box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden; 
+  }
+
+
+
+}
+@media only screen and (min-width: 769px) and (max-width: 1024px)  {
+
+  .login-box h2{
+    position: absolute;
+    text-align: left;
+    font-size: 2.2vh; /* Taille de police du titre */
+    color: #444444; /* Couleur du texte */
+    left: 50%;
+    top:  30%;
+    transform: translateX(-50%); /* Décale le titre de 50% de sa propre largeur vers la gauche pour le centrer */
+    margin: 0; /* Retire les marges par défaut pour éviter un décalage */
+   padding: 0; /* Retire le padding par défaut */
+   white-space: nowrap; /* Empêche le passage à la ligne */
+   overflow: hidden; /* Cache tout contenu qui dépasse du conteneur */
+   text-overflow: ellipsis; /* Ajoute des points de suspension si le texte est coupé */
+   max-width: 76%; /* Ajustement pour ne pas déborder, en considérant le padding et le positionnement */
+  }
+
+  
+  
+
+  
+  /* Styles pour le logo INSOMEA à gauche */
+  .logo {
+    position: absolute;
+    top: 10%; /* Positionné en bas avec un décalage de 5% */
+    width: 25%; /* Largeur fixe de 20% du viewport */
+    height: auto; /* Hauteur ajustée automatiquement */
+    z-index: 50; /* Assure que le logo est bien visible par dessus le fond */
+    left: 39%; /* Décalé de 10% à partir de la gauche du viewport */
+  }
+  
+  /* Styles pour le logo1 à droite */
+  .logo1 {
+    position: absolute;
+    bottom: 0%; /* Positionné en bas avec un décalage de 5% */
+    width: 25%; /* Largeur fixe de 20% du viewport */
+    height: auto; /* Hauteur ajustée automatiquement */
+    z-index: 50; /* Assure que le logo est bien visible par dessus le fond */
+    right: 35%; /* Décalé de 10% à partir de la droite du viewport */
+  }
+  
+  .login-box {
+    position: absolute;
+    width: 75%; 
+    height: 85%;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: linear-gradient(to right, #ffffff9b, #ffffff);
+    border: 3px solid rgb(255, 255, 255);
+    box-sizing: border-box; 
+    padding: 20px; 
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Ajoute une ombre avec une opacité de 50% */
+  }
+  .login-box:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+   
+    background-color:transparent;
+  }
+  .login-box h1 {
+    color: #1B6182;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    font-size: 7vh; /* Taille de police adaptative selon la largeur de la fenêtre */
+    font-weight: bold;
+    top:30%;
+    position: relative; /* Position relative pour décaler par rapport à son emplacement normal */
+    left:1%; /* Décalage vers la droite; ajustez cette valeur selon vos besoins */
+   
+  }
+  
+  
+  .login-button {
+    background-color: #1B6182;
+    display: flex;
+    right: 25%; /* Décalage à droite augmenté de 10% à 20% */
+    top: 55%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;  /* Augmentation du padding pour un bouton plus grand */
+    margin: 20px 0 20px 20px; /* Ajustement des marges pour une meilleure présentation */
+    border-radius: 8px; /* Coins plus arrondis pour un look moderne */
+    width: 50%; /* Augmentation de la largeur */
+    height: 10%; /* Augmentation de la hauteur */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Ombre légère pour le relief */
+    transition: all 0.3s ease; /* Transitions douces pour tous les effets */
+    font-family: 'Roboto', sans-serif; /* Police sans-serif moderne */
+    font-size: 2vh; /* Taille de police lisible */
+    font-weight: bold; /* Texte en gras pour une meilleure visibilité */
+    letter-spacing: 0.5px; /* Espacement des lettres légèrement augmenté */
+    color: #ffffff;
+    cursor: pointer; 
+    position: absolute; /* Assurez-vous que cette ligne est ajoutée si elle n'est pas déjà là */
+    box-shadow: 0 6px 12px rgba(50, 50, 50, 0.5);
+  }
+  
+  
+  .login-button img {
+    margin-right: 10px; 
+  }
+  .login-button:hover {
+    background-color: #2a779a;
+    transform: scale(1.05); /* Agrandissement léger */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ombre pour la profondeur */
+  }
+  .error-message {
+    color: red; 
+    text-align: center;
+    font-size: 2.5vh; 
+    margin-top: 10%; 
+    width: 100%; 
+    padding:  5%; 
+    box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden; 
+  }
+  .loginimg {
+  width: 0%;  
+}
+.loginimg1 {
+  width: 0%; 
+}
+ 
+
+
+}
+@media only screen and (min-width: 1025px) and (max-width: 1280px)  {
+  .blurbackground {
+    width: 100vw; /* Utilisation de viewport width pour couvrir toute la largeur de la vue */
+    height: 100vh; /* Utilisation de viewport height pour couvrir toute la hauteur de la vue */
+    position: fixed;
+    top: 0; /* Fixé en haut de la page */
+    left: 0; /* Fixé à gauche de la page */
+    background-image: linear-gradient(to right, #00a3ef64, #14d0d06b); /* Dégradé de bleu à vert */
+    background-size: cover; /* S'assure que le fond couvre entièrement l'espace disponible */
+    background-position: center; /* Centre le fond */
+  }
+  .login-box h2{
+    position: absolute;
+    text-align: left;
+    font-size: 1.5vh; /* Taille de police du titre */
+    color: #444444; /* Couleur du texte */
+    left: 10%;
+    bottom: 10%;
+    white-space: nowrap; /* Empêche le passage à la ligne */
+    overflow: hidden; /* Cache tout contenu qui dépasse du conteneur */
+    text-overflow: ellipsis; /* Ajoute des points de suspension si le texte est coupé */
+    max-width: 76%; /* Ajustement pour ne pas déborder, en considérant le padding et le positionnement */
+  }
+  /* Styles pour positionner l'image de connexion à droite de l'écran */
+  /* Styles pour positionner l'image de connexion à droite de l'écran */
+  .loginimg {
+    position: absolute;
+    left: 10%; /* Ajusté pour ne pas coller totalement à droite */
+    top: 17%; /* Ajusté pour ne pas coller totalement en bas */
+    width: 30%; /* Largeur réduite à 30% de la largeur du viewport */
+    max-width: 100px; /* Largeur maximale pour éviter que l'image soit trop grande */
+    height: auto; /* Hauteur ajustée automatiquement pour conserver les proportions */
+    
+  }
+  .loginimg1 {
+    position: absolute;
+    left: 8%; /* Ajusté pour ne pas coller totalement à droite */
+    top: 30%; /* Ajusté pour ne pas coller totalement en bas */
+    width: 40%; /* Largeur réduite à 30% de la largeur du viewport */
+    max-width: 320px; /* Largeur maximale pour éviter que l'image soit trop grande */
+    height: auto; /* Hauteur ajustée automatiquement pour conserver les proportions */
+    
+  }
+  
+  
+  /* Styles pour le logo INSOMEA */
+  .logo {
+    position: absolute;
+    left: 3%;
+    top: 15%;
+    width: 80%; 
+    height: auto; 
+    z-index: 50;
+  
+  }
+  
+  
+  /* Styles pour le logo INSOMEA à gauche */
+  .logo {
+    position: absolute;
+    top: 10%; /* Positionné en bas avec un décalage de 5% */
+    width: 25%; /* Largeur fixe de 20% du viewport */
+    height: auto; /* Hauteur ajustée automatiquement */
+    z-index: 50; /* Assure que le logo est bien visible par dessus le fond */
+    left: 13%; /* Décalé de 10% à partir de la gauche du viewport */
+  }
+  
+  /* Styles pour le logo1 à droite */
+  .logo1 {
+    position: absolute;
+    bottom: 0%; /* Positionné en bas avec un décalage de 5% */
+    width: 20%; /* Largeur fixe de 20% du viewport */
+    height: auto; /* Hauteur ajustée automatiquement */
+    z-index: 50; /* Assure que le logo est bien visible par dessus le fond */
+    right: 15%; /* Décalé de 10% à partir de la droite du viewport */
+  }
+  
+  .login-box {
+    position: absolute;
+    width: 70%; 
+    height: 75%;
+    margin: 0 auto;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: linear-gradient(to right, #ffffff6f, #ffffff);
+    border: 3px solid rgb(255, 255, 255);
+    box-sizing: border-box; 
+    padding: 20px; 
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Ajoute une ombre avec une opacité de 50% */
+  }
+  .login-box:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px; /* Épaisseur du trait */
+    height: 100%; /* Hauteur égale à celle de .login-box */
+    background-color: rgba(0, 0, 0, 0.1); /* Couleur du trait, ajustez l'opacité selon le besoin */
+  }
+  .login-box h1 {
+    color: #1B6182;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    font-size: 6vh; /* Taille de police adaptative selon la largeur de la fenêtre */
+    font-weight: bold;
+    margin-top: 5%;
+    margin-bottom: 15%;
+    position: relative; /* Position relative pour décaler par rapport à son emplacement normal */
+    left:25%; /* Décalage vers la droite; ajustez cette valeur selon vos besoins */
+  }
+  
+  
+  .login-button {
+    background-color: #1B6182;
+    display: flex;
+    right: 11%; /* Décalage à droite augmenté de 10% à 20% */
+    top: 41%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;  /* Augmentation du padding pour un bouton plus grand */
+    margin: 20px 0 20px 20px; /* Ajustement des marges pour une meilleure présentation */
+    border-radius: 8px; /* Coins plus arrondis pour un look moderne */
+    width: 32%; /* Augmentation de la largeur */
+    height: 11%; /* Augmentation de la hauteur */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Ombre légère pour le relief */
+    transition: all 0.3s ease; /* Transitions douces pour tous les effets */
+    font-family: 'Roboto', sans-serif; /* Police sans-serif moderne */
+    font-size: 1.5vh; /* Taille de police lisible */
+    font-weight: bold; /* Texte en gras pour une meilleure visibilité */
+    letter-spacing: 0.5px; /* Espacement des lettres légèrement augmenté */
+    color: #ffffff;
+    cursor: pointer; 
+    position: absolute; /* Assurez-vous que cette ligne est ajoutée si elle n'est pas déjà là */
+    box-shadow: 0 6px 12px rgba(50, 50, 50, 0.5);
+  }
+  
+  
+  .login-button img {
+    margin-right: 10px; 
+  }
+  .login-button:hover {
+    background-color: #2a779a;
+    transform: scale(1.05); /* Agrandissement léger */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ombre pour la profondeur */
+  }
+  .error-message {
+    color: red; 
+    text-align: center;
+    font-size: 2.5vh; 
+    margin-top: 10%; 
+    width: 100%; 
+    padding:  5%; 
+    box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden; 
+  }
+  
+
+
+
 }
 
-.circle2 {
-right: 50%; /* Nouvelle position horizontale pour l'écran plus petit */
+@media only screen and (max-width: 1921px)and(min-width: 1062px)  {
 
-}
+  .blurbackground {
+    width: 100vw; /* Utilisation de viewport width pour couvrir toute la largeur de la vue */
+    height: 100vh; /* Utilisation de viewport height pour couvrir toute la hauteur de la vue */
+    position: fixed;
+    top: 0; /* Fixé en haut de la page */
+    left: 0; /* Fixé à gauche de la page */
+    background-image: linear-gradient(to right, #00a3ef64, #14d0d06b); /* Dégradé de bleu à vert */
+    background-size: cover; /* S'assure que le fond couvre entièrement l'espace disponible */
+    background-position: center; /* Centre le fond */
+  }
+  .login-box h2{
+    position: absolute;
+    text-align: left;
+    font-size: 1rem; /* Taille de police du titre */
+    color: #444444; /* Couleur du texte */
+    left: 25%;
+    bottom: 10%;
+    white-space: nowrap; /* Empêche le passage à la ligne */
+    overflow: hidden; /* Cache tout contenu qui dépasse du conteneur */
+    text-overflow: ellipsis; /* Ajoute des points de suspension si le texte est coupé */
+    max-width: 76%; /* Ajustement pour ne pas déborder, en considérant le padding et le positionnement */
+  }
+  /* Styles pour positionner l'image de connexion à droite de l'écran */
+  /* Styles pour positionner l'image de connexion à droite de l'écran */
+  .loginimg {
+    position: absolute;
+    left: 10%; /* Ajusté pour ne pas coller totalement à droite */
+    top: 17%; /* Ajusté pour ne pas coller totalement en bas */
+    width: 25%; /* Largeur réduite à 30% de la largeur du viewport */
+    max-width: 100px; /* Largeur maximale pour éviter que l'image soit trop grande */
+    height: auto; /* Hauteur ajustée automatiquement pour conserver les proportions */
+    
+  }
+  .loginimg1 {
+    position: absolute;
+    left: 12%; /* Ajusté pour ne pas coller totalement à droite */
+    top: 30%; /* Ajusté pour ne pas coller totalement en bas */
+    width: 30%; /* Largeur réduite à 30% de la largeur du viewport */
+    max-width: 320px; /* Largeur maximale pour éviter que l'image soit trop grande */
+    height: auto; /* Hauteur ajustée automatiquement pour conserver les proportions */
+    
+  }
+  
+  
 
-.circle3 {
-right: 80%; /* Nouvelle position horizontale pour l'écran plus petit */
-}
-
-.login-box {
-width: 60%; /* Largeur du boîtier de connexion */
-height: auto; /* Hauteur ajustée au contenu */
-position: fixed; /* Positionnement fixe par rapport à la fenêtre du navigateur */
-bottom: 0; /* Positionné au bas de l'écran */
-left: 50%; /* Centré horizontalement */
-transform: translateX(-50%); /* Ajustement pour le centrage horizontal */
-border-radius: 20px 20px 20px 20px; /* Arrondi en haut du boîtier, si souhaité */
-padding: 20px; /* Espace intérieur */
-margin-bottom: 10%;
-}
-.login-button {
-width: 85%; /* Réduit pour correspondre à la largeur ajustée du .login-box */
-margin: 20px auto; /* Augmente l'espace au-dessus et centre le bouton */
-padding: 5px 0; /* Ajustement du padding pour un meilleur look */
-font-size: 4vw; /* Ajustement de la taille de la police pour les petits écrans */
-justify-content: center; /* Assure que le contenu est centré dans le bouton */
-}
-
+  
+  /* Styles pour le logo INSOMEA à gauche */
+  .logo {
+    position: absolute;
+    bottom: 10%; /* Positionné en bas avec un décalage de 5% */
+    width: 12%; /* Largeur fixe de 20% du viewport */
+    height: auto; /* Hauteur ajustée automatiquement */
+    z-index: 50; /* Assure que le logo est bien visible par dessus le fond */
+    left: 20%; /* Décalé de 10% à partir de la gauche du viewport */
+  }
+  
+  /* Styles pour le logo1 à droite */
+  .logo1 {
+    position: absolute;
+    bottom: 0%; /* Positionné en bas avec un décalage de 5% */
+    width: 20%; /* Largeur fixe de 20% du viewport */
+    height: auto; /* Hauteur ajustée automatiquement */
+    z-index: 50; /* Assure que le logo est bien visible par dessus le fond */
+    right: 15%; /* Décalé de 10% à partir de la droite du viewport */
+  }
+  
+  .login-box {
+    position: absolute;
+    width: 60%; 
+    height: 75%;
+    margin: 0 auto;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: linear-gradient(to right, #ffffff6f, #ffffff);
+    border: 3px solid rgb(255, 255, 255);
+    box-sizing: border-box; 
+    padding: 20px; 
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Ajoute une ombre avec une opacité de 50% */
+  }
+  .login-box:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px; /* Épaisseur du trait */
+    height: 100%; /* Hauteur égale à celle de .login-box */
+    background-color: rgba(0, 0, 0, 0.1); /* Couleur du trait, ajustez l'opacité selon le besoin */
+  }
+  .login-box h1 {
+    color: #1B6182;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    font-size: 4vw; /* Taille de police adaptative selon la largeur de la fenêtre */
+    font-weight: bold;
+    margin-top: 5%;
+    margin-bottom: 15%;
+    position: relative; /* Position relative pour décaler par rapport à son emplacement normal */
+    left:25%; /* Décalage vers la droite; ajustez cette valeur selon vos besoins */
+  }
+  
+  
+  .login-button {
+    background-color: #1B6182;
+    display: flex;
+    right: 11%; /* Décalage à droite augmenté de 10% à 20% */
+    top: 41%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;  /* Augmentation du padding pour un bouton plus grand */
+    margin: 20px 0 20px 20px; /* Ajustement des marges pour une meilleure présentation */
+    border-radius: 8px; /* Coins plus arrondis pour un look moderne */
+    width: 30%; /* Augmentation de la largeur */
+    height: 12%; /* Augmentation de la hauteur */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Ombre légère pour le relief */
+    transition: all 0.3s ease; /* Transitions douces pour tous les effets */
+    font-family: 'Roboto', sans-serif; /* Police sans-serif moderne */
+    font-size: 18px; /* Taille de police lisible */
+    font-weight: bold; /* Texte en gras pour une meilleure visibilité */
+    letter-spacing: 0.5px; /* Espacement des lettres légèrement augmenté */
+    color: #ffffff;
+    cursor: pointer; 
+    position: absolute; /* Assurez-vous que cette ligne est ajoutée si elle n'est pas déjà là */
+    box-shadow: 0 6px 12px rgba(50, 50, 50, 0.5);
+  }
+  
+  
+  .login-button img {
+    margin-right: 10px; 
+  }
+  .login-button:hover {
+    background-color: #2a779a;
+    transform: scale(1.05); /* Agrandissement léger */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ombre pour la profondeur */
+  }
+  .error-message {
+    color: red; 
+    text-align: center;
+    font-size: 2.5vh; 
+    margin-top: 10%; 
+    width: 100%; 
+    padding:  5%; 
+    box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden; 
+  }
 
 
 

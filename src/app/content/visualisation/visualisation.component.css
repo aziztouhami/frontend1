@@ -1,0 +1,139 @@
+.centered-rectangle {
+    width: 55%; 
+    height: 80%; 
+    background-color: white; 
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    z-index: 40;
+    border-radius: 40px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 3px solid rgb(255, 255, 255);
+    display: flex; 
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+  }
+  .centered-rectangle h1 {
+    color: #1B6182;
+    text-align: center; 
+  }
+  /* Style du conteneur de cy */
+    .centered-rectangle > #cyContainer {
+      width: 100%;
+      height:60%;
+    }
+   
+  
+  /* classe pour envelopper le loader */
+  .loader-container {
+    width: 55%; 
+    height: 75%; 
+    position: fixed;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+  }
+  
+  /* CSS pour .loader inchangé */
+  
+  /* Style du loader */
+    .loader {
+      border: 8px solid #f3f3f3;
+      border-top: 8px solid #1B6182;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 2s linear infinite;
+    }
+    
+    /* Animation de rotation */
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  
+  
+    .error-message {
+      position: absolute;
+      text-align: center;
+      font-weight: bold;
+      color: red;
+      text-shadow: #333;
+      z-index: 10;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size:  3vh;
+  }
+  
+    .error-message bi-emoji-frown{
+      position: absolute;
+      text-align: center;
+      font-weight: bold;
+      color: red;
+      text-shadow: #333;
+      z-index: 10;
+      left: 46%;
+      top:10%;
+      font-size: 8vh;
+  
+    }
+    .modal-content {
+      top: 10%; 
+      left: 50%; 
+      transform: translate(-50%, -50%);
+      z-index: 50;
+      background-color: #f8d7da; 
+      padding: 20px;
+      border-radius: 5px;
+      text-align: center; 
+      width: 19%;
+      height: 15%; 
+      position: fixed;
+  
+     
+    }
+    
+    .modal-content p {
+      color: #721c24; 
+      margin-bottom: 20px;
+    }
+    
+    
+    .modal-content button {
+      background-color: #721c24; 
+      color: white; 
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    .modal-content button:hover {
+      background-color: #5a1a1e; 
+    }
+  
+  
+    @media (max-width: 768px) {
+      .centered-rectangle h1 {
+        font-size: 1.5rem; 
+      }
+      .error-message {
+        font-size: 1.8vh; 
+      }
+    }
+  
+    @media (max-width: 480px) {
+      .centered-rectangle h1 {
+        font-size: 1rem;
+      }
+      .error-message {
+        font-size: 1.5vh; 
+      }
+    }
+  

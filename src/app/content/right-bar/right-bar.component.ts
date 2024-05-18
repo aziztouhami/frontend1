@@ -19,7 +19,7 @@ export class RightBarComponent {
     this.rightBarVisible = !this.rightBarVisible;
 }
 
-  constructor(private http: HttpClient,private router: Router,private msalService: MsalService) {} // Constructeur du composant
+  constructor(private http: HttpClient,private router: Router) {} // Constructeur du composant
 
   ngOnInit(): void {
     // Initialisation des propriétés UserName et Adresse à partir des données de session
@@ -28,9 +28,5 @@ export class RightBarComponent {
       this.Adresse = sessionStorage.getItem('email'); // Récupère l'adresse email de l'utilisateur depuis la session
     }
   }
-  logout(): void {   sessionStorage.clear(); 
   
-    this.msalService.logout({
-      postLogoutRedirectUri: '/login'
-    });  }
 }

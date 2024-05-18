@@ -1,0 +1,461 @@
+
+
+.container h1{
+    
+  color: white;
+     font-size: 6vh;
+     
+     text-align: center;
+     transform: scale(1.05); 
+     text-shadow: 2px 2px 4px #1B6182; 
+   
+   }
+
+
+
+.container {
+ display: flex;
+ justify-content: center; 
+ align-items: center; 
+ background-color: transparent;
+ margin: 0; 
+ font-family: Arial, sans-serif; 
+padding-top: 2%;
+ z-index: 500;
+ flex-direction: column;
+ min-height: 300px;
+
+}
+.rectangle {
+
+ list-style-type: none; 
+ padding: 20px; 
+ width: 50%;
+ max-width: 50%;
+ min-height: 400px;
+max-height:400px ;
+ overflow-y: auto; 
+ box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+ background-color: rgb(255, 255, 255); 
+ z-index: 600;
+ position: relative;
+}
+
+
+
+
+
+/* Stylisation des éléments de la liste */
+.contenu {
+ background-color: #1B6182; 
+ color: white; 
+ margin-bottom: 10px;
+ line-height: 1.6; 
+ padding: 10px; 
+ border: 1px solid #ddd; 
+ border-radius: 5px; 
+ box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
+ display: flex; 
+ justify-content: space-between; 
+ align-items: center; 
+ z-index: 500;
+ transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.contenu:hover {
+ transform: scale(1.01); 
+ box-shadow: 0 4px 8px rgba(0,0,0,0.3); 
+}
+/* Stylisation du bouton */
+.voir-btn {
+ padding: 5px 10px; 
+ background-color: #ffd70ff2; 
+ color: white; 
+ border: none; 
+ border-radius: 5px;
+ cursor: pointer; 
+ font-size: bold;
+ transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.voir-btn :hover {
+ transform: scale(1.01); 
+ box-shadow: 0 4px 8px rgba(0,0,0,0.3); 
+}
+
+
+
+.error-message {
+ position: absolute; 
+ top: 50%; 
+ left: 50%;
+ transform: translate(-50%, -50%); 
+ width: 100%;
+ text-align: center;
+ color: red;
+ font-weight: bold;
+}
+
+@media only screen and (max-width: 320px) {
+ .container h1 {
+     font-size: 5vh; 
+     transform: scale(1); 
+   
+ }
+
+ .container {
+     display: flex;
+    justify-content: center; 
+    align-items: center; 
+    background-color: transparent;
+    margin: 0; 
+    font-family: Arial, sans-serif; 
+   padding-top: 15%;
+    z-index: 500;
+    flex-direction: column;
+    width: 100%;
+ }
+
+ .rectangle {
+   
+     list-style-type: none; 
+     padding: 10px; 
+     width: 80%; 
+     max-height: 200px; 
+     overflow-y: auto; 
+     box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+     background-color: rgb(255, 255, 255); 
+     z-index: 600;
+ }
+
+ .contenu{
+     padding: 8px; 
+ }
+
+ .voir-btn {
+     padding: 4px 8px; 
+ }
+}
+@media only screen and (min-width: 321px) and (max-width: 480px) {
+
+ .container h1 {
+     font-size: 4vh;
+     transform: scale(1); 
+ }
+
+
+ .container {
+     display: flex;
+    justify-content: center; 
+    align-items: center; 
+    background-color: transparent;
+    margin: 0; 
+    font-family: Arial, sans-serif; 
+   padding-top: 15%;
+    z-index: 500;
+    flex-direction: column; 
+    width: 100%;
+ }
+
+ .rectangle {
+   
+     list-style-type: none; 
+     padding: 10px; 
+     width: 80%;
+     max-height: 200px; 
+     overflow-y: auto; 
+     box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+     background-color: rgb(255, 255, 255); 
+     z-index: 600;
+ }
+
+ .contenu {
+     padding: 8px; 
+ }
+
+ .voir-btn {
+     padding: 4px 8px; 
+ }
+}
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+
+ .container h1{
+ 
+     color: white;
+        font-size: 2vh;
+
+        text-align: center;
+        transform: scale(1.05); 
+        text-shadow: 2px 2px 4px #1B6182; 
+      
+      }
+      
+
+
+.container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    background-color: transparent;
+    margin: 0; 
+    font-family: Arial, sans-serif; 
+   padding-top: 5%;
+    z-index: 500;
+    flex-direction: column;
+    width: 100%;
+
+}
+.rectangle {
+   
+    list-style-type: none; 
+    padding: 10px; 
+    width: 80%; 
+    max-height: 200px; 
+    overflow-y: auto; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+    background-color: rgb(255, 255, 255);
+    z-index: 600;
+}
+
+/* Stylisation globale du conteneur */
+
+
+/* Stylisation des éléments de la liste */
+.contenu{
+    background-color: #1B6182; 
+    color: white; 
+    margin-bottom: 10px; 
+    line-height: 1.6; 
+    padding: 10px;
+    border: 1px solid #ddd; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    z-index: 500;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+.contenu:hover {
+    transform: scale(1.01); 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); 
+}
+/* Stylisation du bouton */
+.voir-btn {
+    padding: 5px 10px;
+    background-color: #ffd70ff2; 
+    color: white; /* Couleur du texte du bouton */
+    border: none; /* Aucune bordure pour le bouton */
+    border-radius: 5px; /* Bords arrondis pour le bouton */
+    cursor: pointer; /* Change le curseur en pointeur */
+    font-size: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition douce pour transform et shadow */
+}
+.voir-btn :hover {
+    transform: scale(1.01); /* Agrandit légèrement l'élément lors du survol */
+  
+}
+}
+@media only screen and (min-width: 481px) and (max-width: 600px) {
+
+ .container h1{
+ 
+     color: white;
+        font-size: 3vh;
+
+        text-align: center;
+        transform: scale(1.05); /* Agrandissement léger */
+        text-shadow: 2px 2px 4px #1B6182; /* Ombre blanche */
+      
+      }
+      
+
+
+.container {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    background-color: transparent;
+    margin: 0; /* Supprime les marges par défaut */
+    font-family: Arial, sans-serif; /* Police de caractère */
+   padding-top: 15%;
+    z-index: 500;
+    flex-direction: column; /* Oriente les enfants verticalement */
+    width: 100%;
+
+
+}
+.rectangle {
+   
+    list-style-type: none; /* Supprime les chiffres par défaut de la liste numérotée */
+    padding: 10px; /* Padding autour de la liste */
+    width: 85%; /* Largeur de la liste */
+    max-height: 150px; /* Hauteur maximale avant que la barre de défilement apparaisse */
+    overflow-y: auto; /* Permet le défilement vertical automatique si nécessaire */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Ombre sous la liste pour un effet élévé */
+    background-color: rgb(255, 255, 255); /* Couleur de fond de la liste */
+    z-index: 600;
+    height: 70%;
+  
+}
+/* Stylisation globale du conteneur */
+
+
+/* Stylisation des éléments de la liste */
+.contenu {
+    background-color: #1B6182; /* Couleur de fond de chaque élément */
+    color: white; /* Couleur de l'écriture de chaque élément (changement en blanc pour contraste) */
+    margin-bottom: 10px; /* Marge en bas de chaque élément */
+    line-height: 1.6; /* Hauteur de ligne */
+    padding: 10px; /* Padding à l'intérieur de chaque élément */
+    border: 1px solid #ddd; /* Bordure pour former un cadre autour de chaque élément */
+    border-radius: 5px; /* Bords arrondis pour chaque élément */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Ombre portée pour un effet de profondeur plus marqué */
+    display: flex; /* Active le flexbox pour les éléments de la liste */
+    justify-content: space-between; /* Sépare le contenu et le bouton */
+    align-items: center; /* Centre les éléments verticalement */
+    z-index: 500;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition douce pour transform et shadow */
+}
+.contenu:hover {
+    transform: scale(1.01); /* Agrandit légèrement l'élément lors du survol */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Ombre plus intense pour un effet de profondeur */
+}
+/* Stylisation du bouton */
+.voir-btn {
+    padding: 5px 10px; /* Padding intérieur du bouton */
+    background-color: #ffd70ff2; /* Couleur de fond du bouton */
+    color: white; /* Couleur du texte du bouton */
+    border: none; /* Aucune bordure pour le bouton */
+    border-radius: 5px; /* Bords arrondis pour le bouton */
+    cursor: pointer; /* Change le curseur en pointeur */
+    font-size: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition douce pour transform et shadow */
+}
+.voir-btn :hover {
+    transform: scale(1.01); /* Agrandit légèrement l'élément lors du survol */
+  
+}
+
+}
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+
+ 
+ .container h1 {
+     font-size: 3vh; /* Diminution de la taille de la police pour les tablettes */
+     transform: scale(1); /* Désactiver l'agrandissement */
+ }
+
+ .container {
+     display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    background-color: transparent;
+    margin: 0; /* Supprime les marges par défaut */
+    font-family: Arial, sans-serif; /* Police de caractère */
+   padding-top: 15%;
+    z-index: 500;
+    flex-direction: column; /* Oriente les enfants verticalement */
+    width: 100%;
+ }
+
+ .rectangle {
+   
+     list-style-type: none; /* Supprime les chiffres par défaut de la liste numérotée */
+     padding: 10px; /* Padding autour de la liste */
+     width: 80%; /* Largeur de la liste */
+     max-height: 300px; /* Hauteur maximale avant que la barre de défilement apparaisse */
+     overflow-y: auto; /* Permet le défilement vertical automatique si nécessaire */
+     box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Ombre sous la liste pour un effet élévé */
+     background-color: rgb(255, 255, 255); /* Couleur de fond de la liste */
+     z-index: 600;
+ }
+ 
+
+ .contenu {
+     padding: 8px; /* Réduction du padding dans les éléments */
+ }
+
+ .voir-btn {
+     padding: 4px 8px; /* Réduction du padding des boutons */
+ }
+}
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+
+ .container h1{
+ 
+     color: white;
+        font-size: 3.5vh;
+        
+        text-align: center;
+        transform: scale(1.05); /* Agrandissement léger */
+        text-shadow: 2px 2px 4px #1B6182; /* Ombre blanche */
+      
+      }
+      
+
+
+      .container {
+         display: flex;
+        justify-content: center; /* Centre horizontalement */
+        align-items: center; /* Centre verticalement */
+        background-color: transparent;
+        margin: 0; /* Supprime les marges par défaut */
+        font-family: Arial, sans-serif; /* Police de caractère */
+       padding-top: 15%;
+        z-index: 500;
+        flex-direction: column; /* Oriente les enfants verticalement */
+        width: 100%;
+     }
+ 
+     .rectangle {
+       
+         list-style-type: none; /* Supprime les chiffres par défaut de la liste numérotée */
+         padding: 10px; /* Padding autour de la liste */
+         width: 80%; /* Largeur de la liste */
+         max-height: 300px; /* Hauteur maximale avant que la barre de défilement apparaisse */
+         overflow-y: auto; /* Permet le défilement vertical automatique si nécessaire */
+         box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Ombre sous la liste pour un effet élévé */
+         background-color: rgb(255, 255, 255); /* Couleur de fond de la liste */
+         z-index: 600;
+     }
+
+/* Stylisation globale du conteneur */
+
+
+/* Stylisation des éléments de la liste */
+.contenu {
+    background-color: #1B6182; /* Couleur de fond de chaque élément */
+    color: white; /* Couleur de l'écriture de chaque élément (changement en blanc pour contraste) */
+    margin-bottom: 10px; /* Marge en bas de chaque élément */
+    line-height: 1.6; /* Hauteur de ligne */
+    padding: 10px; /* Padding à l'intérieur de chaque élément */
+    border: 1px solid #ddd; /* Bordure pour former un cadre autour de chaque élément */
+    border-radius: 5px; /* Bords arrondis pour chaque élément */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Ombre portée pour un effet de profondeur plus marqué */
+    display: flex; /* Active le flexbox pour les éléments de la liste */
+    justify-content: space-between; /* Sépare le contenu et le bouton */
+    align-items: center; /* Centre les éléments verticalement */
+    z-index: 500;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition douce pour transform et shadow */
+}
+.contenu:hover {
+    transform: scale(1.01); /* Agrandit légèrement l'élément lors du survol */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Ombre plus intense pour un effet de profondeur */
+}
+/* Stylisation du bouton */
+.voir-btn {
+    padding: 5px 10px; /* Padding intérieur du bouton */
+    background-color: #ffd70ff2; /* Couleur de fond du bouton */
+    color: white; /* Couleur du texte du bouton */
+    border: none; /* Aucune bordure pour le bouton */
+    border-radius: 5px; /* Bords arrondis pour le bouton */
+    cursor: pointer; /* Change le curseur en pointeur */
+    font-size: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition douce pour transform et shadow */
+}
+.voir-btn :hover {
+    transform: scale(1.01); /* Agrandit légèrement l'élément lors du survol */
+  
+}
+
+}

@@ -1,47 +1,257 @@
 /* Styles généraux pour le corps de la page */
 body, html {
-    height: 100%;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    overflow: hidden; 
-    position: fixed;
-  }
-  
-    
-  
-  
-
-  .logo {
-    position: absolute;
-    left: 3%;
-    top: 4%;
-    width: 9%; 
-    height: auto; 
-    z-index: 120;
-  }
-
-  /* Media query pour les écrans de taille inférieure à 768px (taille de tablette) */
-  @media (max-width: 768px) {
-    .logo {
-      left: 50%; 
-      transform: translateX(-50%); 
-      top: 4%; 
-      width: 20%; 
-      height: auto;
-    }
-
-  }
-
-  app-left-bar {
-    position: fixed;
-    z-index: 100; 
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow: hidden; 
+  position: fixed;
 }
-app-right-bar {
+
+  
+
+
+
+.logo {
+  position: absolute;
+  left: 3%;
+  top: 4%;
+  width: 9%; 
+  height: auto; 
+  z-index: 120;
+}
+
+/* Media query pour les écrans de taille inférieure à 768px (taille de tablette) */
+@media only screen and (max-width: 320px)  {
+  .header-bar {
+    position: fixed; /* Fixe la barre en haut de la page */
+    top: 0; /* Positionne la barre tout en haut */
+    left: 0; /* Aligné à gauche */
+    width: 100%; /* S'étend sur toute la largeur */
+    height: 50px; /* Hauteur de la barre */
+    background-color: white; /* Couleur de fond blanc */
+    z-index: 90; /* S'assure que la barre est au-dessus de la plupart des autres éléments */
+}
+  .logo {
+    left: 50%; 
+    transform: translateX(-50%); 
+    top: 4%; 
+    width: 20%; 
+    height: auto;
+  }
+
+}
+
+app-left-bar {
   position: fixed;
   z-index: 100; 
+}
+app-right-bar {
+position: fixed;
+z-index: 100; 
 }
 
 
 app-background {
-    z-index: 1;
+  z-index: 1;
 }
+@media only screen and (min-width: 321px) and (max-width: 480px) {
+.header-bar {
+  position: fixed; /* Fixe la barre en haut de la page */
+  top: 0; /* Positionne la barre tout en haut */
+  left: 0; /* Aligné à gauche */
+  width: 100%; /* S'étend sur toute la largeur */
+  height: 50px; /* Hauteur de la barre */
+  background-color: white; /* Couleur de fond blanc */
+  z-index: 90; /* S'assure que la barre est au-dessus de la plupart des autres éléments */
+}
+.logo {
+  left: 50%; 
+  transform: translateX(-50%); 
+  top: 3%; 
+  width: 20%; 
+  height: auto;
+}
+
+}
+
+app-left-bar {
+position: fixed;
+z-index: 100; 
+}
+app-right-bar {
+position: fixed;
+z-index: 100; 
+}
+
+
+app-background {
+z-index: 1;
+}
+@media only screen and (min-width: 481px) and (max-width: 600px) {
+.header-bar {
+  position: fixed; /* Fixe la barre en haut de la page */
+  top: 0; /* Positionne la barre tout en haut */
+  left: 0; /* Aligné à gauche */
+  width: 100%; /* S'étend sur toute la largeur */
+  height: 50px; /* Hauteur de la barre */
+  background-color: white; /* Couleur de fond blanc */
+  z-index: 90; /* S'assure que la barre est au-dessus de la plupart des autres éléments */
+}
+.logo {
+  left: 50%; 
+  transform: translateX(-50%); 
+  top: 4%; 
+  width: 20%; 
+  height: auto;
+}
+
+}
+
+app-left-bar {
+position: fixed;
+z-index: 100; 
+}
+app-right-bar {
+position: fixed;
+z-index: 100; 
+}
+
+
+app-background {
+z-index: 1;
+}
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+.header-bar {
+  position: fixed; /* Fixe la barre en haut de la page */
+  top: 0; /* Positionne la barre tout en haut */
+  left: 0; /* Aligné à gauche */
+  width: 100%; /* S'étend sur toute la largeur */
+  height: 50px; /* Hauteur de la barre */
+  background-color: white; /* Couleur de fond blanc */
+  z-index: 90; /* S'assure que la barre est au-dessus de la plupart des autres éléments */
+}
+.logo {
+  left: 50%; 
+  transform: translateX(-50%); 
+  top: 4%; 
+  width: 20%; 
+  height: auto;
+}
+
+}
+
+app-left-bar {
+position: fixed;
+z-index: 100; 
+}
+app-right-bar {
+position: fixed;
+z-index: 100; 
+}
+
+
+app-background {
+z-index: 1;
+}
+
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+.header-bar {
+  position: fixed; /* Fixe la barre en haut de la page */
+  top: 0; /* Positionne la barre tout en haut */
+  left: 0; /* Aligné à gauche */
+  width: 100%; /* S'étend sur toute la largeur */
+  height: 60px; /* Hauteur de la barre */
+  background-color: white; /* Couleur de fond blanc */
+  z-index: 90; /* S'assure que la barre est au-dessus de la plupart des autres éléments */
+}
+.logo {
+  left: 50%; 
+  transform: translateX(-50%); 
+  top: 2.5%; 
+  width: 20%; 
+  height: auto;
+}
+
+}
+
+app-left-bar {
+position: fixed;
+z-index: 100; 
+}
+app-right-bar {
+position: fixed;
+z-index: 100; 
+}
+
+
+app-background {
+z-index: 1;
+}
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+.header-bar {
+  position: fixed; /* Fixe la barre en haut de la page */
+  top: 0; /* Positionne la barre tout en haut */
+  left: 0; /* Aligné à gauche */
+  width: 100%; /* S'étend sur toute la largeur */
+  height: 60px; /* Hauteur de la barre */
+  background-color: white; /* Couleur de fond blanc */
+  z-index: 90; /* S'assure que la barre est au-dessus de la plupart des autres éléments */
+}
+.logo {
+  left: 50%; 
+  transform: translateX(-50%); 
+  top: 2.5%; 
+  width: 15%; 
+  height: auto;
+}
+
+}
+
+app-left-bar {
+position: fixed;
+z-index: 100; 
+}
+app-right-bar {
+position: fixed;
+z-index: 100; 
+}
+
+
+app-background {
+z-index: 1;
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1280px) {
+.header-bar {
+  position: fixed; /* Fixe la barre en haut de la page */
+  top: 0; /* Positionne la barre tout en haut */
+  left: 0; /* Aligné à gauche */
+  width: 100%; /* S'étend sur toute la largeur */
+  height: 50px; /* Hauteur de la barre */
+  background-color: white; /* Couleur de fond blanc */
+  z-index: 90; /* S'assure que la barre est au-dessus de la plupart des autres éléments */
+}
+.logo {
+  left: 50%; 
+  transform: translateX(-50%); 
+  top: 1%; 
+  width: 10%; 
+  height: auto;
+}
+
+}
+
+app-left-bar {
+position: fixed;
+z-index: 100; 
+}
+app-right-bar {
+position: fixed;
+z-index: 100; 
+}
+
+
+app-background {
+z-index: 1;
+}
+

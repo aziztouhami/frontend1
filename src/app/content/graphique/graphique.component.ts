@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import cytoscape from 'cytoscape';
 import coseBilkent from 'cytoscape-cose-bilkent';
+
 import { environment } from '../../../environments/environment';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
@@ -38,38 +39,132 @@ export class GraphiqueComponent implements OnInit {
  // Propriétés pour stocker l'ID de l'abonnement et son nom
   id: string= '';
   SubscriptionName: string ='';
-
-// Référence à l'élément graphique cytoscape
+  uniqueTypes: string[] = [];
+  resourcegroups: string[] = [];
+  selectedTypes = new Set<string>();
+  selectedResourceGroups = new Set<string>();
   @ViewChild('cy', { static: true }) cyElement!: ElementRef;
   constructor(
     private service: AbonnementsService,
     private route: ActivatedRoute,
     private title: Title
-  ) {}
+  ) {  
+  }
  // Propriétés pour gérer les erreurs et le chargement 
   error: boolean = false;
   error2: boolean = false;
   error2Content:String=''
   errorMessageacess: string = '';
   isLoading = true; 
+  allTypesSelected = true;
+  allResourceGroupsSelected = true;
   ErrorLoading() {
       this.error = true;
       this.errorMessageacess = 'Error while loading the graphic';
     
   }
+  filteredResults: string[] = [];  // Stockez les résultats filtrés ici
+  filteredTypes: string[] = [];  // Stockez les résultats filtrés ici
+
+  onFilter(): void { this.getAbonnement(this.id).subscribe({
+    next: (data) => {this.filteredTypes = Array.from(this.selectedTypes)?? [];
+      this.filteredResults=Array.from(this.selectedResourceGroups)?? [];
+      const filtredRG=this.filterByResourceGroup(data, this.filteredResults)
+          const filteredData = this.filterResourcesByTypes(filtredRG, this.filteredTypes);
+          this.generateDiagram(filteredData);}})
+    // Appliquez votre logique de filtrage ici
+    // Pour l'exemple, nous filtrons simplement basé sur la sélection
+    
+
+  }
+
+  // Méthode pour filtrer les ressources basées sur les types sélectionnés
+  filterResourcesByTypes(data: ResourceGroup[], selectedTypes: string[]): ResourceGroup[] {
+    // Première étape : Filtrer les ressources basées sur les types sélectionnés
+    const filteredGroups = data.map(group => ({
+      ...group,
+      resources: group.resources.filter(resource => selectedTypes.includes(resource.type))
+    })).filter(group => group.resources.length > 0);
+  
+    // Deuxième étape : Créer une liste de tous les ID de ressources valides
+    const validResourceIds = new Set(filteredGroups.flatMap(group => group.resources.map(resource => resource.id)));
+
+
+  filteredGroups.forEach(group => {
+    group.resources.forEach(resource => {
+      console.log(resource.dependsOn)
+      resource.Resourcesconnecte = resource.Resourcesconnecte.filter(conn => validResourceIds.has(conn.id));
+    });});
+    // Troisième étape : Nettoyer les dépendances et les connexions
+    filteredGroups.forEach(group => {
+      group.resources.forEach(resource => {
+        resource.dependsOn = resource.dependsOn.filter(dep => validResourceIds.has(dep.id));
+        resource.Resourcesconnecte = resource.Resourcesconnecte.filter(conn => validResourceIds.has(conn.id));
+      });
+    });
+  
+    return filteredGroups;
+  }
+
+    // Méthode pour filtrer les ressources basées sur les types sélectionnés
+    filterByResourceGroup(data: ResourceGroup[], selectedResourceGroups: string[]): ResourceGroup[] {
+      // Première étape : Filtrer les ressources basées sur les types sélectionnés
+      const filteredGroups = data.filter(group => selectedResourceGroups.includes(group.name));
+    
+      return filteredGroups;
+    }
   
 
+    toggleSelectAll(type: 'type' | 'resourceGroup', event: Event): void {
+      const input = event.target as HTMLInputElement;
+      const selectAll = input.checked;
+      if (type === 'type') {
+        this.selectedTypes = selectAll ? new Set(this.uniqueTypes) : new Set<string>();
+      } else if (type === 'resourceGroup') {
+        this.selectedResourceGroups = selectAll ? new Set(this.resourcegroups) : new Set<string>();
+      }
+    }
+  
+    toggleSelection(set: Set<string>, value: string, type: 'type' | 'resourceGroup'): void {
+      if (set.has(value)) {
+        set.delete(value);
+      } else {
+        set.add(value);
+      }
+      if (type === 'type') {
+        this.allTypesSelected = set.size === this.uniqueTypes.length;
+      } else if (type === 'resourceGroup') {
+        this.allResourceGroupsSelected = set.size === this.resourcegroups.length;
+      }
+    }
+    
+  showfiltre = false;  // Gère l'affichage du second rectangle centré
+
+  // Fonction pour ouvrir le second rectangle
+  openSecondRect() {
+    this.showfiltre = true;
+  }
+
+  // Fonction pour fermer le second rectangle
+  closeSecondRect() {
+    this.showfiltre = false;
+  }
+
+  
+  createLabel(ele: any): string {
+    return `${ele.data('label')}\n${ele.data('type')}`;
+  }
   // Méthode appelée lors de l'initialisation du composant
   ngOnInit(): void {
+    
     // Récupère les paramètres de l'URL
     this.route.queryParams.subscribe(params => {
-       this.id = params['id'];})
-        // Récupère le nom de l'abonnement depuis les paramètres d'URL
-    const nom = this.route.snapshot.paramMap.get('nom');
-    this.SubscriptionName=nom!;
+       this.id = params['id'];
+      this.SubscriptionName=params['nom']})
+        
     
      // Définit le titre de la page en fonction du nom de l'abonnement
-    this.title.setTitle(`${nom} | Azure Resource Visualizer` );
+    this.title.setTitle(`${this.SubscriptionName} | Azure Resource Visualizer` );
     // Vérifie si un ID d'abonnement est disponible
     if (this.id) {
       // Récupère les données de l'abonnement correspondant à l'ID
@@ -77,8 +172,12 @@ export class GraphiqueComponent implements OnInit {
         next: (data) => {
            // Génère le diagramme à partir des données récupérées
           this.isLoading = false; 
-
+         this.uniqueTypes = this.getTypes(data);
+         this.resourcegroups = this.getRG(data);
           this.generateDiagram(data);
+
+          this.selectedTypes = new Set(this.uniqueTypes);
+          this.selectedResourceGroups = new Set(this.resourcegroups);
         // Si le chargement est terminé et aucune erreur, effectue un test  
  if (this.isLoading==false && this.error!=true )  {
   this.getTest()}
@@ -98,10 +197,12 @@ export class GraphiqueComponent implements OnInit {
 
       this.ErrorLoading()}
  }
+
   // Méthode pour générer le diagramme à partir des données
   generateDiagram(array_rg: ResourceGroup[]): void {
     let x=0
     cytoscape.use(coseBilkent);
+
 // Calcul du nombre total de ressources pour ajuster la taille des nœuds
     array_rg.forEach(rg=>{x=x+rg.resources.length})
       // Création du graphique cytoscape avec les données fournies
@@ -130,7 +231,7 @@ export class GraphiqueComponent implements OnInit {
       },
       // Style pour les clusters (nœuds parents)
       {
-        selector: '$node > node', // Sélecteur pour les nœuds parents
+        selector: '.cluster', // Sélecteur pour les nœuds parents
         style: {
           'background-color': '#ffffff', // Couleur de fond ajustée pour les clusters
           'shape': 'round-rectangle', // Forme ajustée
@@ -147,6 +248,8 @@ export class GraphiqueComponent implements OnInit {
           "background-image-smoothing":'yes',
         "background-opacity":0    }
       },
+
+     
       // Style pour les edges
      
         {
@@ -202,7 +305,7 @@ export class GraphiqueComponent implements OnInit {
         data: {
           id: `cluster-${cluster.name}`,
           label: ` ${cluster.name}`,
-        }
+        },classes:'cluster'
       });
   
       cluster.resources.forEach((res: Resource) => {
@@ -277,6 +380,8 @@ export class GraphiqueComponent implements OnInit {
         this.ErrorLoading()
         console.error('Une erreur est survenue :', error);
         return of([]); 
+
+        
       })
     );
   }
@@ -315,6 +420,18 @@ export class GraphiqueComponent implements OnInit {
         Resourcesconnecte: res.Resourcesconnecte.map((connId: any) => ({ id: connId })),
       }))
     }));
+  }
+
+  // Fonction pour extraire tous les types uniques de ressources
+getTypes(resourceGroups: ResourceGroup[]): string[] {
+  const allTypes = resourceGroups.flatMap(rg => rg.resources.map(res => res.type));
+  return Array.from(new Set(allTypes)); // Utilisation de Set pour filtrer les doublons
+}
+
+  // Fonction pour extraire tous les types uniques de ressources
+  getRG(resourceGroups: ResourceGroup[]): string[] {
+    const allTypes = resourceGroups.flatMap(rg => rg.name);
+    return Array.from(new Set(allTypes)); // Utilisation de Set pour filtrer les doublons
   }
 
 // Méthode pour calculer la taille des nœuds en fonction du nombre total de ressources
